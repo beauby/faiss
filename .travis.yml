@@ -1,0 +1,20 @@
+language: cpp
+env:
+  - OMP_NUM_THREADS=4
+matrix:
+  include:
+    - os: linux
+      addons:
+        apt:
+          update: true
+          packages:
+            - libopenblas-dev
+            - liblapack-dev
+            - python-numpy
+            - python-dev
+    - os: osx
+before_install:
+  - ./.travis/before_install.sh
+install:
+  - ./.travis/install.sh
+script: true

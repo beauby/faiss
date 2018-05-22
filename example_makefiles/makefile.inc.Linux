@@ -1,4 +1,3 @@
-
 # Copyright (c) 2015-present, Facebook, Inc.
 # All rights reserved.
 #
@@ -65,19 +64,16 @@ FAISSSHAREDFLAGS=-shared
 #   https://github.com/facebookresearch/faiss/wiki/Troubleshooting#slow-brute-force-search-with-openblas
 # to fix performance problemes with OpenBLAS 
 
-BLASCFLAGS=-DFINTEGER=int
-
-# This is for Centos:
-BLASLDFLAGS?=/usr/lib64/libopenblas.so.0
-
 # for Ubuntu 16:
 # sudo apt-get install libopenblas-dev python-numpy python-dev
-# BLASLDFLAGS?=/usr/lib/libopenblas.so.0
 
 # for Ubuntu 14:
 # sudo apt-get install libopenblas-dev liblapack3 python-numpy python-dev
-# BLASLDFLAGS?=/usr/lib/libopenblas.so.0 /usr/lib/lapack/liblapack.so.3.0
-#
+
+BLASCFLAGS=-DFINTEGER=int
+
+BLASLDFLAGS?=-lopenblas -llapack
+
 # 3. Atlas
 #
 # Automatically tuned linear algebra package. As the name indicates,
