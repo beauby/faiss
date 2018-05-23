@@ -1,0 +1,57 @@
+# Copyright (c) 2015-present, Facebook, Inc.
+# All rights reserved.
+#
+# This source code is licensed under the BSD+Patents license found in the
+# LICENSE file in the root directory of this source tree.
+
+.SUFFIXES: .cpp .o
+
+CXX=@CXX@
+CXXFLAGS=@CXXFLAGS@ @OPENMP_CXXFLAGS@ -msse4 -mpopcnt -m64 -Wno-sign-compare -DFINTEGER=@FORTRAN_INTEGER_CTYPE@
+LDFLAGS=@LDFLAGS@ @BLAS_LIBS@ @LAPACK_LIBS@ @OPENMP_CXXFLAGS@
+
+LIBSRC=$(wildcard *.cpp)
+LIBOBJ=$(patsubst %.cpp,%.o,$(LIBSRC))
+DEPS := $(OBJS:.o=.d)
+
+-include $(DEPS)
+
+OS=$(shell uname -s)
+
+SHAREDEXT=so
+SHAREDFLAGS=-shared
+
+ifeq ($(OS),Darwin)
+	SHAREDEXT=dylib
+	SHAREDFLAGS=-dynamiclib
+endif
+
+all: libfaiss.a libfaiss.$(SHAREDEXT)
+
+libfaiss.a: $(LIBOBJ)
+	ar r $@ $^
+
+libfaiss.$(SHAREDEXT): $(LIBOBJ)
+	$(CXX) $(LDFLAGS) $(SHAREDFLAGS) -o $@ $^
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -MMD -c $< -o $@
+
+clean:
+	rm -f libfaiss.* *.o *.d
+
+#############################
+# pure C++ test in the test directory
+
+test: libfaiss.a # TODO(hoss)
+
+tests/test_blas: tests/test_blas.cpp
+	$(CXX) $(CXXFLAGS) $< -o $@ $(LDFLAGS)
+
+demos/demo_ivfpq_indexing: demos/demo_ivfpq_indexing.cpp libfaiss.a
+	$(CXX) -o $@ $(CXXFLAGS) $< libfaiss.a $(LDFLAGS)
+
+demos/demo_sift1M: demos/demo_sift1M.cpp libfaiss.a
+	$(CXX) -o $@ $(CXXFLAGS) $< libfaiss.a $(LDFLAGS)
+
+.PHONY: clean all
