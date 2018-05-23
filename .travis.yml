@@ -1,20 +1,91 @@
 language: cpp
+sudo: required
+
 env:
-  - OMP_NUM_THREADS=4
+  global:
+    - OMP_NUM_THREADS=4
+    - CXXFLAGS="-g -O0"
 matrix:
   include:
     - os: linux
+      compiler: gcc
       addons:
         apt:
-          update: true
+          packages:
+            - libblas-dev
+            - liblapack-dev
+            - python-numpy
+            - python-dev
+            - swig
+            - gdb
+    - os: linux
+      compiler: gcc
+      addons:
+        apt:
+          packages:
+            - libatlas-base-dev
+            - liblapack-dev
+            - python-numpy
+            - python-dev
+            - swig
+            - gdb
+    - os: linux
+      compiler: gcc
+      addons:
+        apt:
           packages:
             - libopenblas-dev
             - liblapack-dev
             - python-numpy
             - python-dev
+            - swig
+            - gdb
+    - os: linux
+      compiler: clang
+      addons:
+        apt:
+          packages:
+            - libopenblas-dev
+            - liblapack-dev
+            - python-numpy
+            - python-dev
+            - swig
+            - gdb
+      env:
+        # NOTE: Hack, c.f. https://github.com/travis-ci/travis-ci/issues/8613
+        - LD_LIBRARY_PATH="/usr/local/clang/lib"
     - os: osx
+      osx_image: xcode9.3
+      env:
+        - HOMEBREW_NO_AUTO_UPDATE=1
+        - MATRIX_EVAL="brew install gcc@6 numpy swig; brew link --overwrite gcc@6; export CC=gcc-6 CXX=g++-6"
+    - os: osx
+      osx_image: xcode9.3
+      env:
+        - HOMEBREW_NO_AUTO_UPDATE=1
+        - MATRIX_EVAL="brew install llvm numpy swig; brew link --overwrite llvm; export CC=/usr/local/opt/llvm/bin/clang CXX=/usr/local/opt/llvm/bin/clang++"
+        - LDFLAGS="-L/usr/local/opt/llvm/lib"
+        - CPPFLAGS="-I/usr/local/opt/llvm/include"
+
 before_install:
-  - ./.travis/before_install.sh
+  - eval "$MATRIX_EVAL"
+  - ulimit -c
+  - ulimit -a -S
+  - ulimit -a -H
+  - cat /proc/sys/kernel/core_pattern
+  - cat /etc/default/apport
+  - service --status-all || true
+  - initctl list || true
+after_failure:
+  - COREFILE=$(find . -name "core" | head -n 1); echo $COREFILE # find core file
+  - if [[ -f "$COREFILE" ]]; then gdb -c "$COREFILE" ./tests/test_runner -ex "thread apply all bt" -ex "set pagination 0" -batch; fi
+
 install:
-  - ./.travis/install.sh
-script: true
+  - sudo bash -c 'echo core > /proc/sys/kernel/core_pattern'
+  - aclocal
+  - autoconf
+  - ./configure
+  - make
+script:
+  - ulimit -c unlimited -S
+  - make test && make -C python test

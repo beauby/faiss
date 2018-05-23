@@ -11,7 +11,7 @@ AC_CONFIG_SRCDIR([Index.h])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([acinclude])
 
-: ${CXXFLAGS="-g -O3"}
+: ${CXXFLAGS="-g -O3 -Wall -Wextra"}
 
 # Checks for programs.
 AC_LANG(C++)
@@ -19,6 +19,7 @@ AC_PROG_CXX
 AX_CXX_COMPILE_STDCXX([11])
 AC_PROG_CPP
 AC_PROG_MAKE_SET
+AC_PROG_MKDIR_P
 
 AC_OPENMP
 
@@ -30,6 +31,9 @@ AX_LAPACK
 test "x$ax_lapack_ok" == "xno" && \
      AC_MSG_ERROR([An implementation of LAPACK is required but none was found.])
 
+FA_PYTHON
+
+FA_NUMPY
 
 # Checks for header files.
 AC_CHECK_HEADERS([float.h limits.h stddef.h stdint.h stdlib.h string.h sys/time.h unistd.h])
@@ -46,13 +50,13 @@ AC_TYPE_UINT32_T
 AC_TYPE_UINT64_T
 AC_TYPE_UINT8_T
 
-FA_CHECK_FCALLSCSUB
-FA_CHECK_CTYPE_FORTRAN(integer, int long)
+# FA_CHECK_FCALLSCSUB
+# FA_CHECK_CTYPE_FORTRAN(integer, int long)
 
 # Checks for library functions.
 AC_FUNC_MALLOC
 AC_FUNC_MMAP
 AC_CHECK_FUNCS([clock_gettime floor gettimeofday memmove memset munmap pow sqrt strerror strstr])
 
-AC_CONFIG_FILES([Makefile])
+AC_CONFIG_FILES([makefile.inc])
 AC_OUTPUT

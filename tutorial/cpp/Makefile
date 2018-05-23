@@ -1,11 +1,17 @@
-MAKEFILE_INC=../../makefile.inc
+# Copyright (c) 2015-present, Facebook, Inc.
+# All rights reserved.
+#
+# This source code is licensed under the BSD+Patents license found in the
+# LICENSE file in the root directory of this source tree.
 
--include $(MAKEFILE_INC)
+-include ../../makefile.inc
 
 NVCCLDFLAGS =	-Xcompiler \"-Wl,-rpath=../../:../../gpu/\" \
 		-L../.. -L../../gpu -lfaiss -lgpufaiss
 
-LDFLAGS = -L../.. -Wl,-rpath=../.. -lfaiss
+LDFLAGS = -L../.. -lfaiss
+
+default: cpu
 
 all: cpu gpu
 
@@ -29,11 +35,7 @@ gpu: 4-GPU 5-Multiple-GPUs
 	../../gpu/libgpufaiss.$(SHAREDEXT)
 	$(NVCC) $(NVCCFLAGS) -o $@ $< $(NVCCLDFLAGS) -I../../../
 
-../../libfaiss.$(SHAREDEXT):
-	cd ../../ && make libfaiss.$(SHAREDEXT)
-
-../../gpu/libgpufaiss.$(SHAREDEXT):
-	cd ../../gpu/ && make libgpufaiss.$(SHAREDEXT)
-
 clean:
 	rm -f 1-Flat 2-IVFFlat 3-IVFPQ 4-GPU 5-Multiple-GPUs
+
+.PHONY: all cpu default gpu clean
