@@ -86,5 +86,4 @@ dep:
              cpp -MM -std=gnu++0x $$i; \
 	done > makefile.dep
 
-.SUFFIXES: .cpp .o .cu
 .PHONY: all clean dep

@@ -15,7 +15,8 @@ AC_MSG_CHECKING([for Python headers path])
 fa_python_headers=`$PYTHON_BIN -c "from distutils.sysconfig import *; print(get_python_inc())"`
 
 if test x$fa_python_headers == x; then
-  AC_MSG_ERROR([not found])
+  AC_MSG_RESULT([not found])
+  AC_MSG_WARN([You won't be able to build the python interface.])
 else
   AC_MSG_RESULT($fa_python_headers)
   AC_SUBST(PYTHON_INCLUDE, $fa_python_headers)

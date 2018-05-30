@@ -15,5 +15,5 @@ clean:
 %: %.cpp ../libfaiss.a
 	$(CXX) -o $@ $(CXXFLAGS) $^ $(LDFLAGS) $(LIBS)
 
-.SUFFIXES: .cpp .o
+
 .PHONY: all clean

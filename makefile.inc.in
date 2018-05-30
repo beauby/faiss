@@ -6,6 +6,8 @@
 
 CXX          = @CXX@
 # NOTE: Change to `-DFINTEGER=long` if using MKL.
+# TODO: Investigate the LAPACKE wrapper for LAPACK, which defines the correct
+#   type for FORTRAN integers.
 CPPFLAGS     = @CPPFLAGS@ -DFINTEGER=int
 CXXFLAGS     = @CXXFLAGS@ -fPIC @OPENMP_CXXFLAGS@ -m64 -Wno-sign-compare
 CPUFLAGS     = -msse4 -mpopcnt

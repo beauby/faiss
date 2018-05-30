@@ -61,7 +61,7 @@ dep:
 # Tests
 
 test: libfaiss.a
-	make -C tests
+	make -C tests run
 
 
 #############################
@@ -80,5 +80,4 @@ python/_swigfaiss.so: libfaiss.a
 	$(MAKE) -C python _swigfaiss.so
 
 
-.SUFFIXES: .cpp .o
 .PHONY: all clean dep install installdirs py test uninstall

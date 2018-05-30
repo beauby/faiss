@@ -11,13 +11,13 @@ TESTS=$(TESTS_SRC:.cpp=.o)
 
 all: run
 
-test_runner: $(TESTS) ../libfaiss.a gtest/make/gtest_main.a
+run: tests
+	./tests
+
+tests: $(TESTS) ../libfaiss.a gtest/make/gtest_main.a
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS) $(LIBS)
 
-run: test_runner
-	./test_runner
-
-%.o: %.cpp gtest
+%.o: %.cpp gtest ../libfaiss.a
 	$(CXX) $(CXXFLAGS) -c -o $@ $< $(LDFLAGS) -Igtest/include -I../..
 
 gtest/make/gtest_main.a: gtest
@@ -33,5 +33,5 @@ clean:
 	rm -f *.o
 	rm -rf gtest
 
-.SUFFIXES: .cpp .o
-.PHONY: all clean
+
+.PHONY: all clean run
