@@ -23,7 +23,6 @@
 #include <faiss/index_io.h>
 
 
-namespace {
 
 struct Tempfilename {
 
@@ -50,8 +49,6 @@ struct Tempfilename {
 };
 
 pthread_mutex_t Tempfilename::mutex = PTHREAD_MUTEX_INITIALIZER;
-
-}  // namespace
 
 
 TEST(ONDISK, make_invlists) {

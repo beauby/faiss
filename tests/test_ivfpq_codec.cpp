@@ -16,8 +16,6 @@
 #include <faiss/utils.h>
 
 
-namespace {
-
 // dimension of the vectors to index
 int d = 64;
 
@@ -45,7 +43,6 @@ double eval_codec_error (long ncentroids, long m, const std::vector<float> &v)
     return faiss::fvec_L2sqr (v.data(), v2.data(), nb * d);
 }
 
-}  // namespace
 
 
 TEST(IVFPQ, codec) {
