@@ -7,12 +7,12 @@
 *.dylib
 *.pyc
 *~
-config.*
-aclocal.m4
-makefile.inc
-/tests/test
+/config.*
+/aclocal.m4
 /autom4te.cache/
+/makefile.inc
 /bin/
 /c_api/bin/
 /c_api/gpu/bin/
+/tests/test
 /tests/gtest/
