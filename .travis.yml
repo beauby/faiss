@@ -1,10 +1,9 @@
 language: cpp
-sudo: required
 
 env:
   global:
     - OMP_NUM_THREADS=4
-    - CXXFLAGS="-g -O0"
+
 matrix:
   include:
     - os: linux
@@ -17,7 +16,6 @@ matrix:
             - python-numpy
             - python-dev
             - swig
-            - gdb
     - os: linux
       compiler: gcc
       addons:
@@ -28,7 +26,6 @@ matrix:
             - python-numpy
             - python-dev
             - swig
-            - gdb
     - os: linux
       compiler: gcc
       addons:
@@ -39,7 +36,6 @@ matrix:
             - python-numpy
             - python-dev
             - swig
-            - gdb
     - os: linux
       compiler: clang
       addons:
@@ -50,7 +46,6 @@ matrix:
             - python-numpy
             - python-dev
             - swig
-            - gdb
       env:
         # NOTE: Hack, c.f. https://github.com/travis-ci/travis-ci/issues/8613
         - LD_LIBRARY_PATH="/usr/local/clang/lib"
@@ -69,23 +64,13 @@ matrix:
 
 before_install:
   - eval "$MATRIX_EVAL"
-  - ulimit -c
-  - ulimit -a -S
-  - ulimit -a -H
-  - cat /proc/sys/kernel/core_pattern
-  - cat /etc/default/apport
-  - service --status-all || true
-  - initctl list || true
-after_failure:
-  - COREFILE=$(find . -name "core" | head -n 1); echo $COREFILE # find core file
-  - if [[ -f "$COREFILE" ]]; then gdb -c "$COREFILE" ./tests/test_runner -ex "thread apply all bt" -ex "set pagination 0" -batch; fi
 
 install:
-  - sudo bash -c 'echo core > /proc/sys/kernel/core_pattern'
   - aclocal
   - autoconf
   - ./configure
   - make
+
 script:
-  - ulimit -c unlimited -S
-  - make test && make -C python test
+  - make test
+  - make -C python test
