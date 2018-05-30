@@ -30,7 +30,7 @@ NVCCFLAGS    = $(CUDAFLAGS) \
 NVCCLDFLAGS  = -Xcompiler "@OPENMP_CXXFLAGS@"
 NVCCLIBS     = -Xlinker "@BLAS_LIBS@" -Xlinker "@LAPACK_LIBS@" -lcublas
 
-OS=$(shell uname -s)
+OS = $(shell uname -s)
 
 SHAREDEXT   = so
 SHAREDFLAGS = -shared
@@ -41,8 +41,8 @@ ifeq ($(OS),Darwin)
 endif
 
 SWIG        ?= swig
-MKDIR_P      = @MKDIR_P@
-PYTHON       = @PYTHON@
+MKDIR_P     ?= @MKDIR_P@
+PYTHON      ?= @PYTHON@
 
 prefix      ?= @prefix@
 exec_prefix ?= @exec_prefix@
