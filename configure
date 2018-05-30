@@ -5823,7 +5823,10 @@ $as_echo_n "checking for numpy headers path... " >&6; }
 fa_numpy_headers=`$PYTHON_BIN -c "import numpy; print(numpy.get_include())"`
 
 if test x$fa_numpy_headers == x; then
-  as_fn_error $? "not found" "$LINENO" 5
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: not found" >&5
+$as_echo "not found" >&6; }
+   { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: You won't be able to build the python interface." >&5
+$as_echo "$as_me: WARNING: You won't be able to build the python interface." >&2;}
 else
   { $as_echo "$as_me:${as_lineno-$LINENO}: result: $fa_numpy_headers" >&5
 $as_echo "$fa_numpy_headers" >&6; }
