@@ -8,12 +8,10 @@
 *.pyc
 *~
 config.*
-configure
 aclocal.m4
 makefile.inc
 /bin/
 /c_api/bin/
 /c_api/gpu/bin/
-/python/swigfaiss_*wrap.cpp
 /tests/gtest/
 /tests/test
