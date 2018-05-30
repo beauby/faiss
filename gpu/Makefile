@@ -77,13 +77,13 @@ clean:
 	rm -rf *.o impl/*.o utils/*.o test/*.o libgpufaiss.a \
 		libgpufaiss.$(SHAREDEXT) \
 
--include makefile.dep
+-include depend
 
-dep:
+depend:
 	for i in $(patsubst %.o,%.cpp,$(CPPOBJ)) \
                  $(patsubst %.o,%.cu,$(CUOBJ)); do \
 	     echo -n $$( dirname $$i )/ ; \
              cpp -MM -std=gnu++0x $$i; \
-	done > makefile.dep
+	done > depend
 
-.PHONY: all clean dep
+.PHONY: all clean
