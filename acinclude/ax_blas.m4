@@ -81,14 +81,16 @@ case $with_blas in
 	*) BLAS_LIBS="-l$with_blas" ;;
 esac
 
-# Get fortran linker names of BLAS functions to check for.
-# AC_F77_FUNC(sgemm)
-# AC_F77_FUNC(dgemm)
+AC_ARG_WITH(mkl_dir,
+        [AS_HELP_STRING([--with-mkl-dir=<dir>], [use MKL in <dir>])])
+
 sgemm=sgemm_
 dgemm=dgemm_
 
 ax_blas_save_LIBS="$LIBS"
 LIBS="$LIBS $FLIBS"
+
+ax_blas_integer=int
 
 # First, check BLAS_LIBS environment variable
 if test $ax_blas_ok = no; then
@@ -112,34 +114,37 @@ fi
 
 # BLAS in Intel MKL library?
 if test $ax_blas_ok = no; then
-	# MKL for gfortran
-	if test x"$ac_cv_fc_compiler_gnu" = xyes; then
-		# 64 bit
-		if test $host_cpu = x86_64; then
-			AC_CHECK_LIB(mkl_gf_lp64, $sgemm,
-			[ax_blas_ok=yes;BLAS_LIBS="-lmkl_gf_lp64 -lmkl_sequential -lmkl_core -lpthread"],,
-			[-lmkl_gf_lp64 -lmkl_sequential -lmkl_core -lpthread])
-		# 32 bit
-		elif test $host_cpu = i686; then
-			AC_CHECK_LIB(mkl_gf, $sgemm,
-				[ax_blas_ok=yes;BLAS_LIBS="-lmkl_gf -lmkl_sequential -lmkl_core -lpthread"],,
-				[-lmkl_gf -lmkl_sequential -lmkl_core -lpthread])
-		fi
-	# MKL for other compilers (Intel, PGI, ...?)
-	else
-		# 64-bit
-		if test $host_cpu = x86_64; then
-			AC_CHECK_LIB(mkl_intel_lp64, $sgemm,
-				[ax_blas_ok=yes;BLAS_LIBS="-lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread"],,
-				[-lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread])
-		# 32-bit
-		elif test $host_cpu = i686; then
-			AC_CHECK_LIB(mkl_intel, $sgemm,
-				[ax_blas_ok=yes;BLAS_LIBS="-lmkl_intel -lmkl_sequential -lmkl_core -lpthread"],,
-				[-lmkl_intel -lmkl_sequential -lmkl_core -lpthread])
-		fi
-	fi
+        # 64 bit
+        if test $host_cpu = x86_64; then
+                ax_blas_cxxflags="-m64"
+                ax_blas_integer="int"
+                ax_blas_cppflags="-I$with_mkl_dir/include"
+                ax_blas_lib="mkl_intel_ilp64"
+                if test x$with_mkl_dir != x; then
+                        ax_blas_ldflags="-L$with_mkl_dir/lib/intel64"
+                fi
+
+        # 32 bit
+        elif test $host_cpu = i686; then
+                ax_blas_cxxflags="-m32"
+                ax_blas_integer="int"
+                ax_blas_cppflags="-I$with_mkl_dir/include"
+                ax_blas_lib="mkl_intel"
+                if test x$with_mkl_dir != x; then
+                        ax_blas_ldflags="-L$with_mkl_dir/lib/ia32"
+                fi
+        fi
+
+        save_LDFLAGS="$LDFLAGS"
+        LDFLAGS="$LDFLAGS $ax_blas_ldflags"
+        ax_blas_libs="-l$ax_blas_lib -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl"
+        AC_CHECK_LIB($ax_blas_lib, $sgemm,
+                     [ax_blas_ok=yes;BLAS_LIBS="$ax_blas_libs";BLAS_CXXFLAGS="$ax_blas_cxxflags";BLAS_LDFLAGS="$ax_blas_ldflags";BLAS_CPPFLAGS="$ax_blas_cppflags"],,
+                     [-lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl])
+
+        LDFLAGS="$save_LDFLAGS"
 fi
+
 # Old versions of MKL
 if test $ax_blas_ok = no; then
 	AC_CHECK_LIB(mkl, $sgemm, [ax_blas_ok=yes;BLAS_LIBS="-lmkl -lguide -lpthread"],,[-lguide -lpthread])
@@ -226,6 +231,10 @@ if test $ax_blas_ok = no; then
 fi
 
 AC_SUBST(BLAS_LIBS)
+AC_SUBST(BLAS_CXXFLAGS)
+AC_SUBST(BLAS_CPPFLAGS)
+AC_SUBST(BLAS_LDFLAGS)
+AC_SUBST(BLAS_INTEGER, $ax_blas_integer)
 
 LIBS="$ax_blas_save_LIBS"
 
