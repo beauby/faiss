@@ -20,6 +20,7 @@
 
 #include <unordered_set>
 #include <queue>
+#include <memory>
 
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -103,9 +104,238 @@ struct NodeDistFarther {
 };
 
 
-/** Heap structure that allows fast */
+/**
+ * MinMaxHeap: Structure that allows:
+ *   - O(1) retrieval of min/max;
+ *   - O(log n) removal of min/max;
+ *   - O(log n) insertion.
+ *
+ * It works like a standard heap, except the heap property is reversed for every
+ *   other layer, i.e. nodes on layers 0, 2, ..., 2k, ... follow the max heap
+ *   property, while nodes on layers 1, 3, ..., 2k+1, ... follow the min heap
+ *   property (where a node follows the min-heap (resp. max-heap) property if
+ *   its value is lesser or equal (resp. bigger or equal) to the values of its
+ *   children.
+ */
+struct MinMaxHeap {
+  const size_t capacity_;
+  size_t size_;
+  std::unique_ptr<storage_idx_t[]> keys_;
+  std::unique_ptr<float[]> values_;
+  const float *values_one_;
 
-struct MinimaxHeap {
+  explicit MinMaxHeap(size_t capacity)
+      : capacity_(capacity),
+        size_(0),
+        keys_(new storage_idx_t[capacity]),
+        values_(new float[capacity]),
+        values_one_(values_.get() - 1)
+    {}
+
+  size_t size() const {
+    return size_;
+  }
+
+  void clear() {
+    size_ = 0;
+  }
+
+  float max() const {
+    assert(size_ > 0);
+
+    return values_[0];
+  }
+
+  float min() const {
+    assert(size_ > 0);
+
+    return values_[_min()];
+  }
+
+  void push(storage_idx_t k, float v) {
+    if (size_ == capacity_) {
+      pop_max();
+    }
+
+    _push(k, v);
+  }
+
+  void _push(storage_idx_t k, float v) {
+    assert(size_ < capacity_);
+
+    keys_[size_] = k;
+    values_[size_] = v;
+    ++size_;
+
+    if (size_ == 1) {
+      return;
+    }
+
+    size_t i = size_;          ///< Index of the new node (1-based).
+    size_t i_parent = i >> 1; ///< Index of the parent node of i (1-based).
+
+    if (level(i) % 2) { // Node i is on a min level.
+      if (values_one_[i] > values_one_[i_parent]) {
+        _swap(i - 1, i_parent - 1);
+        _bubble_up<std::greater<float>>(i_parent);
+      } else {
+        _bubble_up<std::less<float>>(i);
+      }
+    } else { // Node i is on a max level.
+      if (values_one_[i] < values_one_[i_parent]) {
+        _swap(i - 1, i_parent - 1);
+        _bubble_up<std::less<float>>(i_parent);
+      } else {
+        _bubble_up<std::greater<float>>(i);
+      }
+    }
+  }
+
+  void _swap(size_t i, size_t j) {
+    std::swap(keys_[i], keys_[j]);
+    std::swap(values_[i], values_[j]);
+  }
+
+  template<typename Cmp>
+  void _bubble_up(size_t i, const Cmp cmp = Cmp()) {
+    for (;;) {
+      size_t i_gparent = i >> 2;
+      if (!i_gparent) {
+        return;
+      }
+
+      if (!cmp(values_one_[i], values_one_[i_gparent])) {
+        return;
+      }
+
+      _swap(i - 1, i_gparent - 1);
+      i = i_gparent;
+    }
+  }
+
+  storage_idx_t pop_max() {
+    assert(size_ > 0);
+    storage_idx_t res = keys_[0];
+
+    _swap(0, size_ - 1);
+    --size_;
+    _trickle_down(1);
+
+    return res;
+  }
+
+  size_t _min() const {
+    if (3 <= size_) {
+      if (values_[1] < values_[2]) {
+        return 1;
+      } else {
+        return 2;
+      }
+    } else if (2 == size_) {
+      return 1;
+    } else if (1 == size_) {
+      return 0;
+    }
+
+    return -1;
+  }
+
+  storage_idx_t pop_min(float *val_min = nullptr) {
+    assert(size_ > 0);
+    size_t min_i = _min();
+    storage_idx_t res = keys_[min_i];
+    if (val_min) {
+      *val_min = values_[min_i];
+    }
+
+    _swap(min_i, size_ - 1);
+    --size_;
+    _trickle_down(min_i + 1);
+
+    return res;
+  }
+
+  void _trickle_down(size_t i) {
+    if (level(i) % 2) { // Node i is on a min level.
+      _trickle_down<std::less<float>>(i);
+    } else { // Node i is on a max level.
+      _trickle_down<std::greater<float>>(i);
+    }
+  }
+
+  template<typename Cmp>
+  void _trickle_down(size_t i, const Cmp cmp = Cmp()) {
+    for (;;) {
+      if (i << 1 > size_) { // Node i has no children.
+        return;
+      }
+
+      // Compute the index of child or grand child (if any) with minimum value.
+      const size_t child = i << 1;
+      const size_t gchild = child << 1;
+      size_t m = child;
+
+      if (child + 1 <= size_ && cmp(values_one_[child + 1], values_one_[m])) {
+        m = child + 1;
+      }
+
+      for (size_t j = 0; j < 4; ++j) {
+        const size_t gchild_j = gchild + j;
+        if (gchild_j > size_) {
+          break;
+        }
+
+        if (cmp(values_one_[gchild_j], values_one_[m])) {
+          m = gchild_j;
+        }
+      }
+
+
+      if (m >= gchild) { // Node m is a grand child of i.
+        if (cmp(values_one_[m], values_one_[i])) {
+          _swap(i - 1, m - 1);
+          if (cmp(values_one_[m >> 1], values_one_[m])) {
+            _swap(m - 1, (m >> 1) - 1);
+          }
+
+          i = m;
+        } else {
+          return;
+        }
+      } else { // Node m is a child of i.
+        if (cmp(values_one_[m], values_one_[i])) {
+          _swap(i - 1, m - 1);
+        }
+
+        return;
+      }
+    }
+  }
+
+  // Compute level (= log2) of node.
+  size_t level(size_t i) const {
+    size_t level = 0;
+    while (i >>= 1) {
+      ++level;
+    }
+
+    return level;
+  }
+
+  int count_below(float thresh) {
+    int res = 0;
+    for(size_t i = 0; i < size_; ++i) {
+      if (values_[i] < thresh)
+        ++res;
+    }
+
+    return res;
+  }
+};
+
+using MinimaxHeap = MinMaxHeap;
+
+struct MinimaxHeap_old {
     int n;
     int k;
     int nvalid;
@@ -114,7 +344,7 @@ struct MinimaxHeap {
     std::vector<float> dis;
     typedef faiss::CMax<float, storage_idx_t> HC;
 
-    explicit MinimaxHeap(int n): n(n), k(0), nvalid(0), ids(n), dis(n) {}
+    explicit MinimaxHeap_old(int n): n(n), k(0), nvalid(0), ids(n), dis(n) {}
 
     void push(storage_idx_t i, float v)
     {
@@ -418,8 +648,8 @@ int search_from_candidates(const HNSW & hnsw,
     int nres = nres_in;
     int ndis = 0;
     for (int i = 0; i < candidates.size(); i++) {
-        idx_t v1 = candidates.ids[i];
-        float d = candidates.dis[i];
+        idx_t v1 = candidates.keys_[i];
+        float d = candidates.values_[i];
         FAISS_ASSERT(v1 >= 0);
         if (nres < k) {
             faiss::maxheap_push (++nres, D, I, d, v1);
@@ -1544,8 +1774,6 @@ void ReconstructFromNeighbors::estimate_code(
 
     for (int sq = 0; sq < nsq; sq++) {
         int d0 = sq * dsub;
-        int d1 = d0 + dsub;
-
         {
             FINTEGER ki = k, di = d, m1 = M + 1;
             FINTEGER dsubi = dsub;
@@ -1995,8 +2223,7 @@ int search_from_candidates_2(const HNSW & hnsw,
     int nres = nres_in;
     int ndis = 0;
     for (int i = 0; i < candidates.size(); i++) {
-        idx_t v1 = candidates.ids[i];
-        float d = candidates.dis[i];
+        idx_t v1 = candidates.keys_[i];
         FAISS_ASSERT(v1 >= 0);
         vt.visited[v1] = vt.visno + 1;
     }
