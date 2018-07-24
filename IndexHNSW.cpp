@@ -114,8 +114,8 @@ struct NodeDistFarther {
  *   other layer, i.e. nodes on layers 0, 2, ..., 2k, ... follow the max heap
  *   property, while nodes on layers 1, 3, ..., 2k+1, ... follow the min heap
  *   property (where a node follows the min-heap (resp. max-heap) property if
- *   its value is lesser or equal (resp. bigger or equal) to the values of its
- *   children.
+ *   its value is lesser than or equal (resp. greater than or equal) to the
+ *   values of its children).
  */
 struct MinMaxHeap {
   const size_t capacity_;
@@ -152,6 +152,39 @@ struct MinMaxHeap {
     return values_[_min()];
   }
 
+  int count_below(float thresh) {
+    int res = 0;
+    for(size_t i = 0; i < size_; ++i) {
+      if (values_[i] < thresh)
+        ++res;
+    }
+
+    return res;
+  }
+
+  std::pair<storage_idx_t, float> pop_min() {
+    assert(size_ > 0);
+    const size_t min_i = _min();
+    auto res = std::make_pair(keys_[min_i], values_[min_i]);
+
+    _swap(min_i, size_ - 1);
+    --size_;
+    _trickle_down(min_i + 1);
+
+    return res;
+  }
+
+  std::pair<storage_idx_t, float> pop_max() {
+    assert(size_ > 0);
+    auto res = std::make_pair(keys_[0], values_[0]);
+
+    _swap(0, size_ - 1);
+    --size_;
+    _trickle_down(1);
+
+    return res;
+  }
+
   void push(storage_idx_t k, float v) {
     if (size_ == capacity_) {
       pop_max();
@@ -163,6 +196,7 @@ struct MinMaxHeap {
   void _push(storage_idx_t k, float v) {
     assert(size_ < capacity_);
 
+    // Emplace the new node on the first available leaf.
     keys_[size_] = k;
     values_[size_] = v;
     ++size_;
@@ -171,57 +205,12 @@ struct MinMaxHeap {
       return;
     }
 
-    size_t i = size_;          ///< Index of the new node (1-based).
-    size_t i_parent = i >> 1; ///< Index of the parent node of i (1-based).
-
-    if (level(i) % 2) { // Node i is on a min level.
-      if (values_one_[i] > values_one_[i_parent]) {
-        _swap(i - 1, i_parent - 1);
-        _bubble_up<std::greater<float>>(i_parent);
-      } else {
-        _bubble_up<std::less<float>>(i);
-      }
-    } else { // Node i is on a max level.
-      if (values_one_[i] < values_one_[i_parent]) {
-        _swap(i - 1, i_parent - 1);
-        _bubble_up<std::less<float>>(i_parent);
-      } else {
-        _bubble_up<std::greater<float>>(i);
-      }
-    }
+    _bubble_up(size_);
   }
 
   void _swap(size_t i, size_t j) {
     std::swap(keys_[i], keys_[j]);
     std::swap(values_[i], values_[j]);
-  }
-
-  template<typename Cmp>
-  void _bubble_up(size_t i, const Cmp cmp = Cmp()) {
-    for (;;) {
-      size_t i_gparent = i >> 2;
-      if (!i_gparent) {
-        return;
-      }
-
-      if (!cmp(values_one_[i], values_one_[i_gparent])) {
-        return;
-      }
-
-      _swap(i - 1, i_gparent - 1);
-      i = i_gparent;
-    }
-  }
-
-  storage_idx_t pop_max() {
-    assert(size_ > 0);
-    storage_idx_t res = keys_[0];
-
-    _swap(0, size_ - 1);
-    --size_;
-    _trickle_down(1);
-
-    return res;
   }
 
   size_t _min() const {
@@ -240,39 +229,65 @@ struct MinMaxHeap {
     return -1;
   }
 
-  storage_idx_t pop_min(float *val_min = nullptr) {
-    assert(size_ > 0);
-    size_t min_i = _min();
-    storage_idx_t res = keys_[min_i];
-    if (val_min) {
-      *val_min = values_[min_i];
-    }
-
-    _swap(min_i, size_ - 1);
-    --size_;
-    _trickle_down(min_i + 1);
-
-    return res;
+  size_t _max() const {
+    return 0;
   }
 
-  void _trickle_down(size_t i) {
-    if (level(i) % 2) { // Node i is on a min level.
-      _trickle_down<std::less<float>>(i);
-    } else { // Node i is on a max level.
-      _trickle_down<std::greater<float>>(i);
+  void _bubble_up(size_t node) {
+    const size_t parent = node >> 1; ///< Index of the parent node (1-based).
+
+    if (level(node) % 2) { // Node is on a min level.
+      if (values_one_[node] > values_one_[parent]) {
+        _swap(node - 1, parent - 1);
+        _bubble_up<std::greater<float>>(parent);
+      } else {
+        _bubble_up<std::less<float>>(node);
+      }
+    } else { // Node is on a max level.
+      if (values_one_[node] < values_one_[parent]) {
+        _swap(node - 1, parent - 1);
+        _bubble_up<std::less<float>>(parent);
+      } else {
+        _bubble_up<std::greater<float>>(node);
+      }
     }
   }
 
   template<typename Cmp>
-  void _trickle_down(size_t i, const Cmp cmp = Cmp()) {
+  void _bubble_up(size_t node, const Cmp cmp = Cmp()) {
     for (;;) {
-      if (i << 1 > size_) { // Node i has no children.
+      size_t gparent = node >> 2;
+      if (!gparent) {
         return;
       }
 
-      // Compute the index of child or grand child (if any) with minimum value.
-      const size_t child = i << 1;
+      if (!cmp(values_one_[node], values_one_[gparent])) {
+        return;
+      }
+
+      _swap(node - 1, gparent - 1);
+      node = gparent;
+    }
+  }
+
+  void _trickle_down(size_t node) {
+    if (level(node) % 2) { // Node is on a min level.
+      _trickle_down<std::less<float>>(node);
+    } else { // Node is on a max level.
+      _trickle_down<std::greater<float>>(node);
+    }
+  }
+
+  template<typename Cmp>
+  void _trickle_down(size_t node, const Cmp cmp = Cmp()) {
+    for (;;) {
+      const size_t child = node << 1;
+      if (child > size_) { // Node has no children.
+        return;
+      }
       const size_t gchild = child << 1;
+
+      // Compute the index of child or grand child (if any) with minimum value.
       size_t m = child;
 
       if (child + 1 <= size_ && cmp(values_one_[child + 1], values_one_[m])) {
@@ -290,21 +305,21 @@ struct MinMaxHeap {
         }
       }
 
-
-      if (m >= gchild) { // Node m is a grand child of i.
-        if (cmp(values_one_[m], values_one_[i])) {
-          _swap(i - 1, m - 1);
+      // Actually trickle down node if needed.
+      if (m >= gchild) { // Node m is a grand child.
+        if (cmp(values_one_[m], values_one_[node])) {
+          _swap(node - 1, m - 1);
           if (cmp(values_one_[m >> 1], values_one_[m])) {
             _swap(m - 1, (m >> 1) - 1);
           }
 
-          i = m;
+          node = m;
         } else {
           return;
         }
-      } else { // Node m is a child of i.
-        if (cmp(values_one_[m], values_one_[i])) {
-          _swap(i - 1, m - 1);
+      } else { // Node m is a child.
+        if (cmp(values_one_[m], values_one_[node])) {
+          _swap(node - 1, m - 1);
         }
 
         return;
@@ -313,29 +328,17 @@ struct MinMaxHeap {
   }
 
   // Compute level (= log2) of node.
-  size_t level(size_t i) const {
+  size_t level(size_t node) const {
     size_t level = 0;
-    while (i >>= 1) {
+    while (node >>= 1) {
       ++level;
     }
 
     return level;
   }
-
-  int count_below(float thresh) {
-    int res = 0;
-    for(size_t i = 0; i < size_; ++i) {
-      if (values_[i] < thresh)
-        ++res;
-    }
-
-    return res;
-  }
 };
 
-using MinimaxHeap = MinMaxHeap;
-
-struct MinimaxHeap_old {
+struct MinMaxHeap_old {
     int n;
     int k;
     int nvalid;
@@ -344,7 +347,7 @@ struct MinimaxHeap_old {
     std::vector<float> dis;
     typedef faiss::CMax<float, storage_idx_t> HC;
 
-    explicit MinimaxHeap_old(int n): n(n), k(0), nvalid(0), ids(n), dis(n) {}
+    explicit MinMaxHeap_old(int n): n(n), k(0), nvalid(0), ids(n), dis(n) {}
 
     void push(storage_idx_t i, float v)
     {
@@ -366,7 +369,7 @@ struct MinimaxHeap_old {
 
     void clear() {nvalid = k = 0; }
 
-    int pop_min(float *vmin_out = nullptr)
+    std::pair<int, float> pop_min()
     {
         assert(k > 0);
         // returns min. This is an O(n) operation
@@ -375,7 +378,7 @@ struct MinimaxHeap_old {
             if (ids[i] != -1) break;
             i--;
         }
-        if (i == -1) return -1;
+        if (i == -1) return std::make_pair(-1, -1.0);
         int imin = i;
         float vmin = dis[i];
         i--;
@@ -386,8 +389,8 @@ struct MinimaxHeap_old {
             }
             i--;
         }
-        if (vmin_out) *vmin_out = vmin;
-        int ret = ids[imin];
+
+        auto ret = std::make_pair(ids[imin], vmin);
         ids[imin] = -1;
         nvalid --;
         return ret;
@@ -641,7 +644,7 @@ void greedy_update_nearest(const HNSW & hnsw,
 int search_from_candidates(const HNSW & hnsw,
                            DistanceComputer & qdis, int k,
                            idx_t *I, float * D,
-                           MinimaxHeap &candidates,
+                           MinMaxHeap &candidates,
                            VisitedTable &vt,
                            int level, int nres_in = 0)
 {
@@ -664,8 +667,9 @@ int search_from_candidates(const HNSW & hnsw,
     int nstep = 0;
 
     while (candidates.size() > 0) {
-        float d0 = 0;
-        int v0 = candidates.pop_min(&d0);
+        float d0;
+        int v0;
+        std::tie(v0, d0) = candidates.pop_min();
 
         if (do_dis_check) {
             // tricky stopping condition: there are more that ef
@@ -956,7 +960,7 @@ void HNSW::search(DistanceComputer & qdis,
         }
 
         int candidates_size = std::max(efSearch, k);
-        MinimaxHeap candidates(candidates_size);
+        MinMaxHeap candidates(candidates_size);
 
         candidates.push(nearest, d_nearest);
 
@@ -967,7 +971,7 @@ void HNSW::search(DistanceComputer & qdis,
     } else {
 
         int candidates_size = upper_beam;
-        MinimaxHeap candidates(candidates_size);
+        MinMaxHeap candidates(candidates_size);
 
         std::vector<idx_t> I_to_next(candidates_size);
         std::vector<float> D_to_next(candidates_size);
@@ -1356,7 +1360,7 @@ void IndexHNSW::search_level_0(
                     if (vt.get(cj)) continue;
 
                     int candidates_size = std::max(hnsw.efSearch, int(k));
-                    MinimaxHeap candidates(candidates_size);
+                    MinMaxHeap candidates(candidates_size);
 
                     candidates.push(cj, nearest_d[i * nprobe + j]);
 
@@ -1369,7 +1373,7 @@ void IndexHNSW::search_level_0(
                 int candidates_size = std::max(hnsw.efSearch, int(k));
                 candidates_size = std::max(candidates_size, nprobe);
 
-                MinimaxHeap candidates(candidates_size);
+                MinMaxHeap candidates(candidates_size);
                 for(int j = 0; j < nprobe; j++) {
                     storage_idx_t cj = nearest[i * nprobe + j];
 
@@ -2216,7 +2220,7 @@ namespace {
 int search_from_candidates_2(const HNSW & hnsw,
                              DistanceComputer & qdis, int k,
                              idx_t *I, float * D,
-                             MinimaxHeap &candidates,
+                             MinMaxHeap &candidates,
                              VisitedTable &vt,
                              int level, int nres_in = 0)
 {
@@ -2232,8 +2236,9 @@ int search_from_candidates_2(const HNSW & hnsw,
     int nstep = 0;
 
     while (candidates.size() > 0) {
-        float d0 = 0;
-        int v0 = candidates.pop_min(&d0);
+        float d0;
+        int v0;
+        std::tie(v0, d0) = candidates.pop_min();
 
         if (do_dis_check) {
             // tricky stopping condition: there are more that ef
@@ -2323,7 +2328,7 @@ void IndexHNSW2Level::search (idx_t n, const float *x, idx_t k,
             ScopeDeleter1<DistanceComputer> del(dis);
 
             int candidates_size = hnsw.upper_beam;
-            MinimaxHeap candidates(candidates_size);
+            MinMaxHeap candidates(candidates_size);
 
 #pragma omp for
             for(int i = 0; i < n; i++) {
