@@ -11,6 +11,9 @@
 #ifndef FAISS_INDEX_H
 #define FAISS_INDEX_H
 
+#define FAISS_VERSION_MAJOR 5
+#define FAISS_VERSION_MINOR 6
+#define FAISS_VERSION_PATCH 14
 
 #include <cstdio>
 #include <typeinfo>
