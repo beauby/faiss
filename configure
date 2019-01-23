@@ -4127,17 +4127,6 @@ $as_echo "$fa_python_cflags" >&6; }
 PYTHON_CFLAGS=$fa_python_cflags
 
 
-#AC_MSG_CHECKING([for Python ld flags])
-#  fa_python_ldflags=`$PYTHON --ldflags`
-#  if test x"$fa_python_ldflags" == x; then
-#    AC_MSG_RESULT([not found])
-#  else
-#    AC_MSG_RESULT($fa_python_ldflags)
-#    AC_SUBST(PYTHON_LDFLAGS, $fa_python_ldflags)
-#  fi
-#else
-#  AC_MSG_WARN([You won't be able to build the python interface.])
-#fi
 
 
 if test x$PYTHON != x; then
@@ -4690,56 +4679,6 @@ as_fn_error $? "Couldn't find cuda.h
 See \`config.log' for more details" "$LINENO" 5; }
 fi
 
-
-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for cuInit in -lcuda" >&5
-$as_echo_n "checking for cuInit in -lcuda... " >&6; }
-if ${ac_cv_lib_cuda_cuInit+:} false; then :
-  $as_echo_n "(cached) " >&6
-else
-  ac_check_lib_save_LIBS=$LIBS
-LIBS="-lcuda  $LIBS"
-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-
-/* Override any GCC internal prototype to avoid an error.
-   Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char cuInit ();
-int
-main ()
-{
-return cuInit ();
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_cxx_try_link "$LINENO"; then :
-  ac_cv_lib_cuda_cuInit=yes
-else
-  ac_cv_lib_cuda_cuInit=no
-fi
-rm -f core conftest.err conftest.$ac_objext \
-    conftest$ac_exeext conftest.$ac_ext
-LIBS=$ac_check_lib_save_LIBS
-fi
-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_cuda_cuInit" >&5
-$as_echo "$ac_cv_lib_cuda_cuInit" >&6; }
-if test "x$ac_cv_lib_cuda_cuInit" = xyes; then :
-  cat >>confdefs.h <<_ACEOF
-#define HAVE_LIBCUDA 1
-_ACEOF
-
-  LIBS="-lcuda $LIBS"
-
-else
-  { { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
-$as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
-as_fn_error $? "Couldn't find libcuda
-See \`config.log' for more details" "$LINENO" 5; }
-fi
 
   { $as_echo "$as_me:${as_lineno-$LINENO}: checking for cublasAlloc in -lcublas" >&5
 $as_echo_n "checking for cublasAlloc in -lcublas... " >&6; }
