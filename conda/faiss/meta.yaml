@@ -26,10 +26,6 @@ requirements:
     - mkl
     - blas=*=mkl
 
-build:
-  number: {{ FAISS_BUILD_NUMBER }}
-  string: py{{ py }}_{{ FAISS_BUILD_NUMBER }}
-
 test:
   imports:
     - faiss
