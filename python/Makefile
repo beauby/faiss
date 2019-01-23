@@ -8,51 +8,34 @@
 
 HEADERS = $(wildcard ../*.h)
 
-all: cpu build
+ifneq ($(strip $(NVCC)),)
+	SWIGFLAGS = -DGPU_WRAPPER
+endif
 
-#############################
-# CPU
+all: build
 
-cpu: _swigfaiss.so
-
-# Also silently generates swigfaiss.py.
+# Also silently generates swigfaiss_wrap.py.
 swigfaiss_wrap.cpp: swigfaiss.swig $(HEADERS)
-	$(SWIG) -python -c++ -Doverride= -I../ -o $@ $<
+	$(SWIG) -python -c++ -Doverride= -I../ $(SWIGFLAGS) -o $@ $<
 
 swigfaiss_wrap.o: swigfaiss_wrap.cpp
-	$(CXX) $(CXXFLAGS) $(CPUFLAGS) $(PYTHONCFLAGS) -I../ -c $< -o $@
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(CPUFLAGS) $(PYTHONCFLAGS) \
+               -I../ -c $< -o $@
 
 # Extension is .so even on OSX.
 _swigfaiss.so: swigfaiss_wrap.o ../libfaiss.a
-	$(CXX) $(SHAREDFLAGS) $(LDFLAGS) -o $@ $^  $(LIBS)
+	$(CXX) $(SHAREDFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS)
 
-
-#############################
-# GPU
-
-gpu: _swigfaiss_gpu.so
-
-# Also silently generates swigfaiss.py.
-swigfaiss_gpu_wrap.cpp: swigfaiss.swig
-	$(SWIG) -python -c++ -Doverride= -I../ -DGPU_WRAPPER -o $@ $<
-
-swigfaiss_gpu_wrap.o: swigfaiss_gpu_wrap.cpp
-	$(NVCC) $(NVCCFLAGS) $(PYTHONCFLAGS) -I../ -c $< -o $@
-
-_swigfaiss_gpu.so: swigfaiss_gpu_wrap.o ../gpu/libgpufaiss.a ../libfaiss.a
-	$(CXX) $(SHAREDFLAGS) $(NVCCLDFLAGS) $(LDFLAGS) -o $@ $^ $(NVCCLIBS) $(LIBS)
-
-
-build:
+build: _swigfaiss.so swigfaiss.py faiss.py
 	$(PYTHON) setup.py build
 
 install: build
 	$(PYTHON) setup.py install
 
 clean:
-	rm -f swigfaiss_wrap.cpp swigfaiss_gpu_wrap.cpp
-	rm -f swigfaiss.py swigfaiss_gpu.py
-	rm -f _swigfaiss.so _swigfaiss_gpu.so
+	rm -f swigfaiss_wrap.cpp
+	rm -f swigfaiss.py
+	rm -f _swigfaiss.so
 	rm -rf build/
 
-.PHONY: all build clean cpu gpu install
+.PHONY: all build clean install

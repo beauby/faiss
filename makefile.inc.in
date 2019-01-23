@@ -6,20 +6,15 @@
 
 CXX          = @CXX@
 CXXCPP       = @CXXCPP@
-# TODO: Investigate the LAPACKE wrapper for LAPACK, which defines the correct
-#   type for FORTRAN integers.
-CPPFLAGS     = -DFINTEGER=int @CPPFLAGS@
+CPPFLAGS     = -DFINTEGER=int @CPPFLAGS@ @NVCC_CPPFLAGS@
 CXXFLAGS     = -fPIC @OPENMP_CXXFLAGS@ -m64 -Wno-sign-compare @CXXFLAGS@
 CPUFLAGS     = -msse4 -mpopcnt
-LDFLAGS      = @OPENMP_CXXFLAGS@ @LDFLAGS@
-LIBS         = @BLAS_LIBS@ @LAPACK_LIBS@ @LIBS@
+LDFLAGS      = @OPENMP_CXXFLAGS@ @LDFLAGS@ @NVCC_LDFLAGS@
+LIBS         = @BLAS_LIBS@ @LAPACK_LIBS@ @LIBS@ @NVCC_LIBS@
 PYTHONCFLAGS = @PYTHON_CFLAGS@ -I@NUMPY_INCLUDE@
 
 NVCC         = @NVCC@
-NVCCLDFLAGS  = @NVCC_LDFLAGS@
-NVCCLIBS     = @NVCC_LIBS@
 CUDAROOT     = @CUDA_PREFIX@
-CUDACFLAGS   = @NVCC_CPPFLAGS@
 
 ifneq ($(strip $(NVCC)),)
       CUDA_MAJOR   = $(shell $(NVCC) --version | grep -Po 'release \d' | sed 's/release //')
