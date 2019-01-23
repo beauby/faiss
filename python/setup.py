@@ -8,8 +8,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 check_fpath = os.path.join("_swigfaiss.so")
 if not os.path.exists(check_fpath):
     print("Could not find {}".format(check_fpath))
-    print("Have you run `make` and `make py` "
-          "(and optionally `cd gpu && make && make py && cd ..`)?")
+    print("Have you run `make` and `make py`?")
 
 # make the faiss python package dir
 shutil.rmtree("faiss", ignore_errors=True)
@@ -17,11 +16,6 @@ os.mkdir("faiss")
 shutil.copyfile("faiss.py", "faiss/__init__.py")
 shutil.copyfile("swigfaiss.py", "faiss/swigfaiss.py")
 shutil.copyfile("_swigfaiss.so", "faiss/_swigfaiss.so")
-try:
-    shutil.copyfile("_swigfaiss_gpu.so", "faiss/_swigfaiss_gpu.so")
-    shutil.copyfile("swigfaiss_gpu.py", "faiss/swigfaiss_gpu.py")
-except:
-    pass
 
 long_description="""
 Faiss is a library for efficient similarity search and clustering of dense
