@@ -27,6 +27,9 @@ requirements:
     - blas=*=mkl
     - cudatoolkit {{ cudatoolkit }}
 
+build:
+  number: {{ FAISS_BUILD_NUMBER }}
+
 #test:
 #  requires:
 #    - {{ cuda_feature }}
