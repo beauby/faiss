@@ -3,8 +3,7 @@ package:
   version: "{{ FAISS_BUILD_VERSION }}"
 
 source:
-  git_rev: packages2 # v{{ environ.get('FAISS_BUILD_VERSION') }}
-  git_url: https://github.com/beauby/faiss.git # https://github.com/facebookresearch/faiss.git
+  git_url: ../
 
 requirements:
   build:
@@ -18,7 +17,7 @@ requirements:
     - python {{ python }}
     - numpy 1.11.*
     - mkl
-    - cudatoolkit
+    - cudatoolkit {{ cudatoolkit }}
 
   run:
     - intel-openmp # [osx]
@@ -26,7 +25,7 @@ requirements:
     - numpy >=1.11
     - mkl
     - blas=*=mkl
-    - cudatoolkit
+    - cudatoolkit {{ cudatoolkit }}
 
 #test:
 #  requires:

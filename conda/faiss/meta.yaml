@@ -3,8 +3,7 @@ package:
   version: "{{ FAISS_BUILD_VERSION }}"
 
 source:
-  git_rev: packages2
-  git_url: https://github.com/beauby/faiss.git
+  git_url: ../
 
 requirements:
   build:
