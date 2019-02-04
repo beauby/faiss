@@ -4613,13 +4613,12 @@ if test "${with_cuda+set}" = set; then :
   withval=$with_cuda;
 fi
 
-case $with_cuda in
-"") cuda_prefix=/usr/local/cuda ;;
-*) cuda_prefix="$with_cuda"
-esac
 
-# Extract the first word of ""nvcc"", so it can be a program name with args.
-set dummy "nvcc"; ac_word=$2
+if test x$with_cuda != xno; then
+  if test x$with_cuda != x; then
+    cuda_prefix=$with_cuda
+    # Extract the first word of "nvcc", so it can be a program name with args.
+set dummy nvcc; ac_word=$2
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
 $as_echo_n "checking for $ac_word... " >&6; }
 if ${ac_cv_prog_NVCC+:} false; then :
@@ -4629,13 +4628,13 @@ else
   ac_cv_prog_NVCC="$NVCC" # Let the user override the test.
 else
 as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
-for as_dir in "$cuda_prefix/bin"
+for as_dir in $cuda_prefix/bin
 do
   IFS=$as_save_IFS
   test -z "$as_dir" && as_dir=.
     for ac_exec_ext in '' $ac_executable_extensions; do
   if as_fn_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
-    ac_cv_prog_NVCC=""$cuda_prefix/bin/nvcc""
+    ac_cv_prog_NVCC="$cuda_prefix/bin/nvcc"
     $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
     break 2
   fi
@@ -4643,7 +4642,6 @@ done
   done
 IFS=$as_save_IFS
 
-  test -z "$ac_cv_prog_NVCC" && ac_cv_prog_NVCC=""""
 fi
 fi
 NVCC=$ac_cv_prog_NVCC
@@ -4656,15 +4654,69 @@ $as_echo "no" >&6; }
 fi
 
 
-fa_nvcc_bin=$NVCC
+    NVCC_CPPFLAGS="-I$cuda_prefix/include"
+    NVCC_LDFLAGS="-L$cuda_prefix/lib64"
+  else
+    for ac_prog in nvcc /usr/local/cuda/bin/nvcc
+do
+  # Extract the first word of "$ac_prog", so it can be a program name with args.
+set dummy $ac_prog; ac_word=$2
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+$as_echo_n "checking for $ac_word... " >&6; }
+if ${ac_cv_prog_NVCC+:} false; then :
+  $as_echo_n "(cached) " >&6
+else
+  if test -n "$NVCC"; then
+  ac_cv_prog_NVCC="$NVCC" # Let the user override the test.
+else
+as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
+for as_dir in $PATH
+do
+  IFS=$as_save_IFS
+  test -z "$as_dir" && as_dir=.
+    for ac_exec_ext in '' $ac_executable_extensions; do
+  if as_fn_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
+    ac_cv_prog_NVCC="$ac_prog"
+    $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
+    break 2
+  fi
+done
+  done
+IFS=$as_save_IFS
 
-if test x$fa_nvcc_bin != x; then
+fi
+fi
+NVCC=$ac_cv_prog_NVCC
+if test -n "$NVCC"; then
+  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $NVCC" >&5
+$as_echo "$NVCC" >&6; }
+else
+  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+$as_echo "no" >&6; }
+fi
+
+
+  test -n "$NVCC" && break
+done
+
+    if test "x$NVCC" == "x/usr/local/cuda/bin/nvcc"; then
+      cuda_prefix="/usr/local/cuda"
+      NVCC_CPPFLAGS="-I$cuda_prefix/include"
+      NVCC_LDFLAGS="-L$cuda_prefix/lib64"
+    else
+      cuda_prefix=""
+      NVCC_CPPFLAGS=""
+      NVCC_LDFLAGS=""
+    fi
+  fi
+
+  if test "x$NVCC" == x; then
+    as_fn_error $? "Couldn't find nvcc" "$LINENO" 5
+  fi
+
   fa_save_CPPFLAGS="$CPPFLAGS"
   fa_save_LDFLAGS="$LDFLAGS"
   fa_save_LIBS="$LIBS"
-
-  NVCC_CPPFLAGS="-I$cuda_prefix/include"
-  NVCC_LDFLAGS="-L$cuda_prefix/lib64"
 
   CPPFLAGS="$NVCC_CPPFLAGS $CPPFLAGS"
   LDFLAGS="$NVCC_LDFLAGS $LDFLAGS"
@@ -4787,8 +4839,6 @@ fi
   CPPFLAGS="$fa_save_CPPFLAGS"
   LDFLAGS="$fa_save_LDFLAGS"
   LIBS="$fa_save_LIBS"
-else
-  cuda_prefix=""
 fi
 
 
