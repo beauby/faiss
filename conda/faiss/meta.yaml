@@ -3,7 +3,7 @@ package:
   version: "{{ FAISS_BUILD_VERSION }}"
 
 source:
-  git_url: ../
+  git_url: ../../
 
 requirements:
   build:
@@ -13,17 +13,16 @@ requirements:
     - swig
 
   host:
-    - intel-openmp # [osx]
     - python {{ python }}
+    - intel-openmp # [osx]
     - numpy 1.11.*
     - mkl
 
   run:
-    - intel-openmp # [osx]
-    - python {{ python }}
-    - numpy >=1.11
-    - mkl
-    - blas=*=mkl
+    - python
+    - {{ pin_compatible('intel-openmp') }} # [osx]
+    - {{ pin_compatible('numpy') }}
+    - {{ pin_compatible('mkl') }}
 
 build:
   number: {{ FAISS_BUILD_NUMBER }}
