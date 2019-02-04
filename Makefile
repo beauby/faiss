@@ -7,10 +7,9 @@
 -include makefile.inc
 
 SRC        = $(wildcard *.cpp)
-GPU_CPPSRC = $(wildcard gpu/*.cpp) $(wildcard gpu/impl/*.cpp) \
-             $(wildcard gpu/utils/*.cpp)
-GPU_CUSRC  = $(wildcard gpu/*.cu) $(wildcard gpu/impl/*.cu) \
-             $(wildcard gpu/utils/**/*.cu)
+GPU_CPPSRC = $(wildcard gpu/*.cpp gpu/impl/*.cpp gpu/utils/*.cpp)
+GPU_CUSRC  = $(wildcard gpu/*.cu gpu/impl/*.cu gpu/utils/*.cu \
+gpu/utils/nvidia/*.cu gpu/utils/blockselect/*.cu gpu/utils/warpselect/*.cu)
 OBJ        = $(SRC:.cpp=.o)
 GPU_CPPOBJ = $(GPU_CPPSRC:.cpp=.o)
 GPU_CUOBJ  = $(GPU_CUSRC:.cu=.o)
