@@ -6,16 +6,14 @@
 
 -include ../makefile.inc
 
-HEADERS = $(wildcard ../*.h)
-
 ifneq ($(strip $(NVCC)),)
 	SWIGFLAGS = -DGPU_WRAPPER
 endif
 
 all: build
 
-# Also silently generates swigfaiss_wrap.py.
-swigfaiss.cpp: swigfaiss.swig $(HEADERS)
+# Also silently generates swigfaiss.py.
+swigfaiss.cpp: swigfaiss.swig ../libfaiss.a
 	$(SWIG) -python -c++ -Doverride= -I../ $(SWIGFLAGS) -o $@ $<
 
 swigfaiss.o: swigfaiss.cpp
