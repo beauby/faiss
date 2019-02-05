@@ -1,5 +1,5 @@
 ./configure
 make -j $CPU_COUNT
-make -C python
+make py
 cd python
 $PYTHON setup.py install --single-version-externally-managed --record=record.txt

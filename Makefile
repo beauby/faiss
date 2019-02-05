@@ -6,16 +6,24 @@
 
 -include makefile.inc
 
-SRC        = $(wildcard *.cpp)
-GPU_CPPSRC = $(wildcard gpu/*.cpp gpu/impl/*.cpp gpu/utils/*.cpp)
-GPU_CUSRC  = $(wildcard gpu/*.cu gpu/impl/*.cu gpu/utils/*.cu \
+HEADERS     = $(wildcard *.h)
+SRC         = $(wildcard *.cpp)
+OBJ         = $(SRC:.cpp=.o)
+INSTALLDIRS = $(DESTDIR)$(libdir) $(DESTDIR)$(includedir)/faiss
+
+GPU_HEADERS = $(wildcard gpu/*.h gpu/impl/*.h gpu/utils/*.h)
+GPU_CPPSRC  = $(wildcard gpu/*.cpp gpu/impl/*.cpp gpu/utils/*.cpp)
+GPU_CUSRC   = $(wildcard gpu/*.cu gpu/impl/*.cu gpu/utils/*.cu \
 gpu/utils/nvidia/*.cu gpu/utils/blockselect/*.cu gpu/utils/warpselect/*.cu)
-OBJ        = $(SRC:.cpp=.o)
-GPU_CPPOBJ = $(GPU_CPPSRC:.cpp=.o)
-GPU_CUOBJ  = $(GPU_CUSRC:.cu=.o)
+GPU_CPPOBJ  = $(GPU_CPPSRC:.cpp=.o)
+GPU_CUOBJ   = $(GPU_CUSRC:.cu=.o)
+GPU_OBJ     = $(GPU_CPPOBJ) $(GPU_CUOBJ)
+GPU_INSTALLDIRS = $(DESTDIR)$(includedir)/faiss/gpu/{impl,utils}
 
 ifneq ($(strip $(NVCC)),)
-	OBJ += $(GPU_CPPOBJ) $(GPU_CUOBJ)
+	OBJ         += $(GPU_OBJ)
+	INSTALLDIRS += $(GPU_INSTALLDIRS)
+	HEADERS     += $(GPU_HEADERS)
 endif
 
 ############################
@@ -44,19 +52,11 @@ clean:
 # Installing
 
 install: libfaiss.a libfaiss.$(SHAREDEXT) installdirs
-	cp libfaiss.a libfaiss.$(SHAREDEXT) $(DESTDIR)$(libdir)
-	cp *.h $(DESTDIR)$(includedir)/faiss/
-	ifneq ($(strip $(NVCC)),)
-		cp gpu/*.h $(DESTDIR)$(includedir)/faiss/gpu/
-		cp gpu/impl/*.h $(DESTDIR)$(includedir)/faiss/gpu/impl/
-		cp gpu/utils/*.h $(DESTDIR)$(includedir)/faiss/gpu/utils/
-	endif
+	cp libfaiss.{a,$(SHAREDEXT)} $(DESTDIR)$(libdir)
+	tar cf - $(HEADERS) | tar xf - -C $(DESTDIR)$(includedir)/faiss/
 
 installdirs:
-	$(MKDIR_P) $(DESTDIR)$(libdir) $(DESTDIR)$(includedir)/faiss
-	ifneq ($(strip $(NVCC)),)
-		$(MKDIR_P) $(DESTDIR)$(includedir)/faiss/gpu/{impl,utils}
-	endif
+	$(MKDIR_P) $(INSTALLDIRS)
 
 uninstall:
 	rm -f $(DESTDIR)$(libdir)/libfaiss.{a,$(SHAREDEXT)}
@@ -68,7 +68,7 @@ uninstall:
 
 -include depend
 
-depend: $(SRC) $(GPU_CPPSRC) $(GPU_CUSRC)
+depend: $(SRC) $(GPU_SRC)
 	for i in $^; do \
 		$(CXXCPP) $(CPPFLAGS) -x c++ -MM $$i; \
 	done > depend
@@ -78,7 +78,7 @@ depend: $(SRC) $(GPU_CPPSRC) $(GPU_CUSRC)
 # Tests
 
 test: libfaiss.a py
-	make -C tests run
+	$(MAKE) -C tests run
 	PYTHONPATH=./python/build/`ls python/build | grep lib` \
 	$(PYTHON) -m unittest discover tests/ -v
 
@@ -87,7 +87,7 @@ test: libfaiss.a py
 # Demos
 
 demos: libfaiss.a
-	make -C demos
+	$(MAKE) -C demos
 
 
 #############################
