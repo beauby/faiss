@@ -6,8 +6,8 @@
 
 CXX          = @CXX@
 CXXCPP       = @CXXCPP@
-CPPFLAGS     = -DFINTEGER=int @CPPFLAGS@ @NVCC_CPPFLAGS@
-CXXFLAGS     = -fPIC @OPENMP_CXXFLAGS@ @ARCH_CXXFLAGS@ -Wno-sign-compare @CXXFLAGS@
+CPPFLAGS     = -DFINTEGER=int @CPPFLAGS@ @OPENMP_CPPFLAGS @NVCC_CPPFLAGS@
+CXXFLAGS     = -fPIC @ARCH_CXXFLAGS@ -Wno-sign-compare @CXXFLAGS@
 CPUFLAGS     = @ARCH_CPUFLAGS@
 LDFLAGS      = @OPENMP_CXXFLAGS@ @LDFLAGS@ @NVCC_LDFLAGS@
 LIBS         = @BLAS_LIBS@ @LAPACK_LIBS@ @LIBS@ @NVCC_LIBS@
@@ -47,6 +47,7 @@ endif
 MKDIR_P      = @MKDIR_P@
 PYTHON       = @PYTHON@
 SWIG         = @SWIG@
+AR          ?= ar 
 
 prefix      ?= @prefix@
 exec_prefix ?= @exec_prefix@

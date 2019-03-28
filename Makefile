@@ -32,7 +32,7 @@ endif
 all: libfaiss.a libfaiss.$(SHAREDEXT)
 
 libfaiss.a: $(OBJ)
-	ar r $@ $^
+	$(AR) r $@ $^
 
 libfaiss.$(SHAREDEXT): $(OBJ)
 	$(CXX) $(SHAREDFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS)
@@ -95,13 +95,6 @@ demos: libfaiss.a
 
 misc/test_blas: misc/test_blas.cpp
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS)
-
-
-#############################
-# Python
-
-py:
-	$(MAKE) -C python
 
 
 .PHONY: all clean demos install installdirs py test uninstall

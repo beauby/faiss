@@ -13,16 +13,17 @@ requirements:
     - swig
 
   host:
-    - python {{ python }}
+    - python
     - intel-openmp # [osx]
     - numpy 1.11.*
-    - mkl
+    - mkl >=2018
 
   run:
     - python
-    - {{ pin_compatible('intel-openmp') }} # [osx]
-    - {{ pin_compatible('numpy') }}
-    - {{ pin_compatible('mkl') }}
+    - intel-openmp # [osx]
+    - numpy >=1.11
+    - blas=*=mkl
+    - mkl >=2018
 
 build:
   number: {{ FAISS_BUILD_NUMBER }}

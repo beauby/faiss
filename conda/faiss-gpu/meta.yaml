@@ -13,17 +13,18 @@ requirements:
     - swig
 
   host:
-    - python {{ python }}
+    - python
     - intel-openmp # [osx]
     - numpy 1.11.*
-    - mkl
+    - mkl >=2018
     - cudatoolkit {{ cudatoolkit }}
 
   run:
     - python
-    - {{ pin_compatible('intel-openmp') }} # [osx]
-    - {{ pin_compatible('numpy') }}
-    - {{ pin_compatible('mkl') }}
+    - intel-openmp # [osx]
+    - numpy >=1.11
+    - mkl >=2018
+    - blas=*=mkl
     - cudatoolkit
 
 build:
