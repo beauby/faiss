@@ -19,11 +19,14 @@ CUDAROOT     = @CUDA_PREFIX@
 ifneq ($(strip $(NVCC)),)
       CUDA_MAJOR   = $(shell $(NVCC) --version | grep -Po 'release \d' | sed 's/release //')
       CUDA_ARCHES  = -gencode arch=compute_35,code="compute_35" \
-                   -gencode arch=compute_52,code="compute_52" \
-                   -gencode arch=compute_60,code="compute_60" \
-                   -gencode arch=compute_61,code="compute_61"
+                     -gencode arch=compute_52,code="compute_52" \
+                     -gencode arch=compute_60,code="compute_60" \
+                     -gencode arch=compute_61,code="compute_61"
       ifneq ($(CUDA_MAJOR),8)
-            CUDA_ARCHES += -gencode arch=compute_70,code="compute_70"
+           CUDA_ARCHES += -gencode arch=compute_70,code="compute_70"
+      endif
+      ifeq ($(CUDA_MAJOR),10)
+           CUDA_ARCHES += -gencode=arch=compute_75,code="compute_75"
       endif
 endif
 
