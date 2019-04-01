@@ -13,13 +13,13 @@ requirements:
     - swig
 
   host:
-    - python
+    - python {{ python }}
     - intel-openmp # [osx]
     - numpy 1.11.*
     - mkl >=2018
 
   run:
-    - python
+    - python {{ python }}
     - intel-openmp # [osx]
     - numpy >=1.11
     - blas=*=mkl

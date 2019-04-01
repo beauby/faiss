@@ -3263,16 +3263,16 @@ static swig_module_info swig_module = {swig_types, 246, 0, 0, 0, 0};
 #endif
 
 /*-----------------------------------------------
-              @(target):= _swigfaiss_gpu.so
+              @(target):= _swigfaiss.so
   ------------------------------------------------*/
 #if PY_VERSION_HEX >= 0x03000000
-#  define SWIG_init    PyInit__swigfaiss_gpu
+#  define SWIG_init    PyInit__swigfaiss
 
 #else
-#  define SWIG_init    init_swigfaiss_gpu
+#  define SWIG_init    init_swigfaiss
 
 #endif
-#define SWIG_name    "_swigfaiss_gpu"
+#define SWIG_name    "_swigfaiss"
 
 #define SWIGVERSION 0x030012 
 #define SWIG_VERSION SWIGVERSION
@@ -76355,125 +76355,125 @@ SWIGINTERN PyObject *_wrap_downcast_index(PyObject *SWIGUNUSEDPARM(self), PyObje
     Py_END_ALLOW_THREADS
   }
   {
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIDMap *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIDMap,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexShards *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexShardsTemplateT_faiss__Index_t,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexReplicas *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexReplicasTemplateT_faiss__Index_t,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQR *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQR,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQ,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFScalarQuantizer,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlatDedup *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlatDedup,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlat,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVF *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVF,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexFlat,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPQ,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexScalarQuantizer,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexLSH *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexLSH,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPreTransform *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPreTransform,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::MultiIndexQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__MultiIndexQuantizer,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWFlat,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWPQ,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWSQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWSQ,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSW2Level *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSW2Level,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index2Layer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index2Layer,0);
     } else
     /*@SWIG@*/
     
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFPQ,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFFlat,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexFlat,0);
     } else
     /*@SWIG@*/
     
     // default for non-recognized classes
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index,0);
     } else
@@ -76527,42 +76527,42 @@ SWIGINTERN PyObject *_wrap_downcast_VectorTransform(PyObject *SWIGUNUSEDPARM(sel
     Py_END_ALLOW_THREADS
   }
   {
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::RemapDimensionsTransform *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__RemapDimensionsTransform,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::OPQMatrix *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__OPQMatrix,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::PCAMatrix *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__PCAMatrix,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::RandomRotationMatrix *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__RandomRotationMatrix,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::LinearTransform *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__LinearTransform,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::NormalizationTransform *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__NormalizationTransform,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::CenteringTransform *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__CenteringTransform,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::VectorTransform *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__VectorTransform,0);
     } else
@@ -76611,40 +76611,40 @@ SWIGINTERN PyObject *_wrap_downcast_IndexBinary(PyObject *SWIGUNUSEDPARM(self), 
     Py_END_ALLOW_THREADS
   }
   {
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexBinaryReplicas *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexReplicasTemplateT_faiss__IndexBinary_t,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryIVF *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryIVF,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryFlat,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryFromFloat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryFromFloat,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryHNSW *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryHNSW,0);
     } else
     /*@SWIG@*/
     
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexBinaryFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexBinaryFlat,0);
     } else
     /*@SWIG@*/
     
     // default for non-recognized classes
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinary *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinary,0);
     } else
@@ -77154,125 +77154,125 @@ SWIGINTERN PyObject *_wrap_read_index__SWIG_0(PyObject *SWIGUNUSEDPARM(self), Py
     Py_END_ALLOW_THREADS
   }
   {
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIDMap *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIDMap,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexShards *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexShardsTemplateT_faiss__Index_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexReplicas *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexReplicasTemplateT_faiss__Index_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQR *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQR,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFScalarQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlatDedup *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlatDedup,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVF *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVF,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexScalarQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexLSH *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexLSH,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPreTransform *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPreTransform,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::MultiIndexQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__MultiIndexQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWSQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWSQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSW2Level *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSW2Level,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index2Layer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index2Layer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
     // default for non-recognized classes
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index,SWIG_POINTER_OWN);
     } else
@@ -77329,125 +77329,125 @@ SWIGINTERN PyObject *_wrap_read_index__SWIG_1(PyObject *SWIGUNUSEDPARM(self), Py
     Py_END_ALLOW_THREADS
   }
   {
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIDMap *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIDMap,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexShards *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexShardsTemplateT_faiss__Index_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexReplicas *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexReplicasTemplateT_faiss__Index_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQR *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQR,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFScalarQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlatDedup *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlatDedup,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVF *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVF,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexScalarQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexLSH *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexLSH,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPreTransform *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPreTransform,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::MultiIndexQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__MultiIndexQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWSQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWSQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSW2Level *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSW2Level,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index2Layer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index2Layer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
     // default for non-recognized classes
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index,SWIG_POINTER_OWN);
     } else
@@ -77512,125 +77512,125 @@ SWIGINTERN PyObject *_wrap_read_index__SWIG_2(PyObject *SWIGUNUSEDPARM(self), Py
     Py_END_ALLOW_THREADS
   }
   {
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIDMap *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIDMap,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexShards *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexShardsTemplateT_faiss__Index_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexReplicas *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexReplicasTemplateT_faiss__Index_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQR *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQR,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFScalarQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlatDedup *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlatDedup,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVF *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVF,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexScalarQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexLSH *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexLSH,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPreTransform *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPreTransform,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::MultiIndexQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__MultiIndexQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWSQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWSQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSW2Level *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSW2Level,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index2Layer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index2Layer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
     // default for non-recognized classes
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index,SWIG_POINTER_OWN);
     } else
@@ -77684,125 +77684,125 @@ SWIGINTERN PyObject *_wrap_read_index__SWIG_3(PyObject *SWIGUNUSEDPARM(self), Py
     Py_END_ALLOW_THREADS
   }
   {
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIDMap *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIDMap,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexShards *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexShardsTemplateT_faiss__Index_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexReplicas *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexReplicasTemplateT_faiss__Index_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQR *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQR,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFScalarQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlatDedup *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlatDedup,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVF *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVF,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexScalarQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexLSH *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexLSH,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPreTransform *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPreTransform,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::MultiIndexQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__MultiIndexQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWSQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWSQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSW2Level *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSW2Level,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index2Layer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index2Layer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
     // default for non-recognized classes
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index,SWIG_POINTER_OWN);
     } else
@@ -77865,125 +77865,125 @@ SWIGINTERN PyObject *_wrap_read_index__SWIG_4(PyObject *SWIGUNUSEDPARM(self), Py
     Py_END_ALLOW_THREADS
   }
   {
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIDMap *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIDMap,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexShards *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexShardsTemplateT_faiss__Index_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexReplicas *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexReplicasTemplateT_faiss__Index_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQR *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQR,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFScalarQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlatDedup *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlatDedup,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVF *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVF,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexScalarQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexLSH *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexLSH,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPreTransform *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPreTransform,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::MultiIndexQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__MultiIndexQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWSQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWSQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSW2Level *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSW2Level,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index2Layer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index2Layer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
     // default for non-recognized classes
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index,SWIG_POINTER_OWN);
     } else
@@ -78037,125 +78037,125 @@ SWIGINTERN PyObject *_wrap_read_index__SWIG_5(PyObject *SWIGUNUSEDPARM(self), Py
     Py_END_ALLOW_THREADS
   }
   {
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIDMap *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIDMap,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexShards *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexShardsTemplateT_faiss__Index_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexReplicas *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexReplicasTemplateT_faiss__Index_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQR *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQR,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFScalarQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlatDedup *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlatDedup,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVF *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVF,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexScalarQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexLSH *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexLSH,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPreTransform *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPreTransform,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::MultiIndexQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__MultiIndexQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWSQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWSQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSW2Level *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSW2Level,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index2Layer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index2Layer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
     // default for non-recognized classes
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index,SWIG_POINTER_OWN);
     } else
@@ -78315,40 +78315,40 @@ SWIGINTERN PyObject *_wrap_read_index_binary__SWIG_0(PyObject *SWIGUNUSEDPARM(se
     Py_END_ALLOW_THREADS
   }
   {
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexBinaryReplicas *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexReplicasTemplateT_faiss__IndexBinary_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryIVF *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryIVF,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryFromFloat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryFromFloat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryHNSW *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryHNSW,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexBinaryFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexBinaryFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
     // default for non-recognized classes
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinary *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinary,SWIG_POINTER_OWN);
     } else
@@ -78405,40 +78405,40 @@ SWIGINTERN PyObject *_wrap_read_index_binary__SWIG_1(PyObject *SWIGUNUSEDPARM(se
     Py_END_ALLOW_THREADS
   }
   {
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexBinaryReplicas *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexReplicasTemplateT_faiss__IndexBinary_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryIVF *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryIVF,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryFromFloat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryFromFloat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryHNSW *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryHNSW,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexBinaryFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexBinaryFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
     // default for non-recognized classes
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinary *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinary,SWIG_POINTER_OWN);
     } else
@@ -78503,40 +78503,40 @@ SWIGINTERN PyObject *_wrap_read_index_binary__SWIG_2(PyObject *SWIGUNUSEDPARM(se
     Py_END_ALLOW_THREADS
   }
   {
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexBinaryReplicas *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexReplicasTemplateT_faiss__IndexBinary_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryIVF *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryIVF,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryFromFloat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryFromFloat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryHNSW *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryHNSW,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexBinaryFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexBinaryFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
     // default for non-recognized classes
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinary *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinary,SWIG_POINTER_OWN);
     } else
@@ -78590,40 +78590,40 @@ SWIGINTERN PyObject *_wrap_read_index_binary__SWIG_3(PyObject *SWIGUNUSEDPARM(se
     Py_END_ALLOW_THREADS
   }
   {
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexBinaryReplicas *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexReplicasTemplateT_faiss__IndexBinary_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryIVF *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryIVF,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryFromFloat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryFromFloat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryHNSW *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryHNSW,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexBinaryFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexBinaryFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
     // default for non-recognized classes
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinary *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinary,SWIG_POINTER_OWN);
     } else
@@ -78686,40 +78686,40 @@ SWIGINTERN PyObject *_wrap_read_index_binary__SWIG_4(PyObject *SWIGUNUSEDPARM(se
     Py_END_ALLOW_THREADS
   }
   {
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexBinaryReplicas *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexReplicasTemplateT_faiss__IndexBinary_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryIVF *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryIVF,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryFromFloat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryFromFloat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryHNSW *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryHNSW,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexBinaryFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexBinaryFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
     // default for non-recognized classes
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinary *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinary,SWIG_POINTER_OWN);
     } else
@@ -78773,40 +78773,40 @@ SWIGINTERN PyObject *_wrap_read_index_binary__SWIG_5(PyObject *SWIGUNUSEDPARM(se
     Py_END_ALLOW_THREADS
   }
   {
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexBinaryReplicas *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexReplicasTemplateT_faiss__IndexBinary_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryIVF *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryIVF,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryFromFloat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryFromFloat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryHNSW *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryHNSW,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexBinaryFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexBinaryFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
     // default for non-recognized classes
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinary *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinary,SWIG_POINTER_OWN);
     } else
@@ -79005,42 +79005,42 @@ SWIGINTERN PyObject *_wrap_read_VectorTransform(PyObject *SWIGUNUSEDPARM(self), 
     Py_END_ALLOW_THREADS
   }
   {
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::RemapDimensionsTransform *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__RemapDimensionsTransform,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::OPQMatrix *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__OPQMatrix,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::PCAMatrix *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__PCAMatrix,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::RandomRotationMatrix *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__RandomRotationMatrix,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::LinearTransform *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__LinearTransform,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::NormalizationTransform *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__NormalizationTransform,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::CenteringTransform *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__CenteringTransform,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::VectorTransform *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__VectorTransform,SWIG_POINTER_OWN);
     } else
@@ -79523,125 +79523,125 @@ SWIGINTERN PyObject *_wrap_clone_index(PyObject *SWIGUNUSEDPARM(self), PyObject 
     Py_END_ALLOW_THREADS
   }
   {
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIDMap *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIDMap,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexShards *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexShardsTemplateT_faiss__Index_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexReplicas *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexReplicasTemplateT_faiss__Index_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQR *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQR,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFScalarQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlatDedup *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlatDedup,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVF *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVF,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexScalarQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexLSH *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexLSH,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPreTransform *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPreTransform,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::MultiIndexQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__MultiIndexQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWSQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWSQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSW2Level *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSW2Level,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index2Layer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index2Layer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
     // default for non-recognized classes
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index,SWIG_POINTER_OWN);
     } else
@@ -79704,42 +79704,42 @@ SWIGINTERN PyObject *_wrap_Cloner_clone_VectorTransform(PyObject *SWIGUNUSEDPARM
     Py_END_ALLOW_THREADS
   }
   {
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::RemapDimensionsTransform *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__RemapDimensionsTransform,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::OPQMatrix *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__OPQMatrix,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::PCAMatrix *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__PCAMatrix,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::RandomRotationMatrix *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__RandomRotationMatrix,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::LinearTransform *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__LinearTransform,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::NormalizationTransform *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__NormalizationTransform,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::CenteringTransform *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__CenteringTransform,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::VectorTransform *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__VectorTransform,SWIG_POINTER_OWN);
     } else
@@ -79797,125 +79797,125 @@ SWIGINTERN PyObject *_wrap_Cloner_clone_Index(PyObject *SWIGUNUSEDPARM(self), Py
     Py_END_ALLOW_THREADS
   }
   {
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIDMap *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIDMap,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexShards *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexShardsTemplateT_faiss__Index_t,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexReplicas *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexReplicasTemplateT_faiss__Index_t,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQR *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQR,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQ,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFScalarQuantizer,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlatDedup *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlatDedup,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlat,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVF *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVF,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexFlat,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPQ,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexScalarQuantizer,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexLSH *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexLSH,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPreTransform *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPreTransform,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::MultiIndexQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__MultiIndexQuantizer,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWFlat,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWPQ,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWSQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWSQ,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSW2Level *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSW2Level,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index2Layer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index2Layer,0);
     } else
     /*@SWIG@*/
     
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFPQ,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFFlat,0);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexFlat,0);
     } else
     /*@SWIG@*/
     
     // default for non-recognized classes
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index,0);
     } else
@@ -83222,125 +83222,125 @@ SWIGINTERN PyObject *_wrap_index_factory__SWIG_0(PyObject *SWIGUNUSEDPARM(self),
     Py_END_ALLOW_THREADS
   }
   {
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIDMap *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIDMap,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexShards *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexShardsTemplateT_faiss__Index_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexReplicas *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexReplicasTemplateT_faiss__Index_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQR *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQR,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFScalarQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlatDedup *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlatDedup,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVF *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVF,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexScalarQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexLSH *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexLSH,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPreTransform *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPreTransform,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::MultiIndexQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__MultiIndexQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWSQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWSQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSW2Level *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSW2Level,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index2Layer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index2Layer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
     // default for non-recognized classes
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index,SWIG_POINTER_OWN);
     } else
@@ -83406,125 +83406,125 @@ SWIGINTERN PyObject *_wrap_index_factory__SWIG_1(PyObject *SWIGUNUSEDPARM(self),
     Py_END_ALLOW_THREADS
   }
   {
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIDMap *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIDMap,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexShards *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexShardsTemplateT_faiss__Index_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexReplicas *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexReplicasTemplateT_faiss__Index_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQR *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQR,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFScalarQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlatDedup *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlatDedup,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVF *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVF,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexScalarQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexLSH *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexLSH,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPreTransform *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPreTransform,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::MultiIndexQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__MultiIndexQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWSQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWSQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSW2Level *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSW2Level,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index2Layer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index2Layer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
     // default for non-recognized classes
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index,SWIG_POINTER_OWN);
     } else
@@ -83646,40 +83646,40 @@ SWIGINTERN PyObject *_wrap_index_binary_factory(PyObject *SWIGUNUSEDPARM(self), 
     Py_END_ALLOW_THREADS
   }
   {
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexBinaryReplicas *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexReplicasTemplateT_faiss__IndexBinary_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryIVF *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryIVF,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryFromFloat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryFromFloat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinaryHNSW *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinaryHNSW,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexBinaryFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexBinaryFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
     // default for non-recognized classes
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexBinary *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexBinary,SWIG_POINTER_OWN);
     } else
@@ -84521,125 +84521,125 @@ SWIGINTERN PyObject *_wrap_index_gpu_to_cpu(PyObject *SWIGUNUSEDPARM(self), PyOb
     Py_END_ALLOW_THREADS
   }
   {
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIDMap *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIDMap,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexShards *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexShardsTemplateT_faiss__Index_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexReplicas *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexReplicasTemplateT_faiss__Index_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQR *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQR,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFScalarQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlatDedup *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlatDedup,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVF *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVF,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexScalarQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexLSH *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexLSH,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPreTransform *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPreTransform,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::MultiIndexQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__MultiIndexQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWSQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWSQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSW2Level *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSW2Level,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index2Layer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index2Layer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
     // default for non-recognized classes
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index,SWIG_POINTER_OWN);
     } else
@@ -84720,125 +84720,125 @@ SWIGINTERN PyObject *_wrap_index_cpu_to_gpu__SWIG_0(PyObject *SWIGUNUSEDPARM(sel
     Py_END_ALLOW_THREADS
   }
   {
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIDMap *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIDMap,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexShards *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexShardsTemplateT_faiss__Index_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexReplicas *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexReplicasTemplateT_faiss__Index_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQR *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQR,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFScalarQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlatDedup *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlatDedup,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVF *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVF,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexScalarQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexLSH *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexLSH,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPreTransform *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPreTransform,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::MultiIndexQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__MultiIndexQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWSQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWSQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSW2Level *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSW2Level,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index2Layer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index2Layer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
     // default for non-recognized classes
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index,SWIG_POINTER_OWN);
     } else
@@ -84910,125 +84910,125 @@ SWIGINTERN PyObject *_wrap_index_cpu_to_gpu__SWIG_1(PyObject *SWIGUNUSEDPARM(sel
     Py_END_ALLOW_THREADS
   }
   {
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIDMap *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIDMap,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexShards *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexShardsTemplateT_faiss__Index_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexReplicas *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexReplicasTemplateT_faiss__Index_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQR *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQR,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFScalarQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlatDedup *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlatDedup,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVF *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVF,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexScalarQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexLSH *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexLSH,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPreTransform *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPreTransform,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::MultiIndexQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__MultiIndexQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWSQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWSQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSW2Level *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSW2Level,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index2Layer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index2Layer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
     // default for non-recognized classes
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index,SWIG_POINTER_OWN);
     } else
@@ -85182,125 +85182,125 @@ SWIGINTERN PyObject *_wrap_index_cpu_to_gpu_multiple__SWIG_0(PyObject *SWIGUNUSE
     Py_END_ALLOW_THREADS
   }
   {
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIDMap *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIDMap,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexShards *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexShardsTemplateT_faiss__Index_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexReplicas *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexReplicasTemplateT_faiss__Index_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQR *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQR,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFScalarQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlatDedup *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlatDedup,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVF *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVF,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexScalarQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexLSH *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexLSH,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPreTransform *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPreTransform,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::MultiIndexQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__MultiIndexQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWSQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWSQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSW2Level *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSW2Level,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index2Layer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index2Layer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
     // default for non-recognized classes
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index,SWIG_POINTER_OWN);
     } else
@@ -85378,125 +85378,125 @@ SWIGINTERN PyObject *_wrap_index_cpu_to_gpu_multiple__SWIG_1(PyObject *SWIGUNUSE
     Py_END_ALLOW_THREADS
   }
   {
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIDMap *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIDMap,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexShards *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexShardsTemplateT_faiss__Index_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,465,DOWNCAST2@*/
+    /*@SWIG:swigfaiss.swig,451,DOWNCAST2@*/
     if (dynamic_cast<faiss::IndexReplicas *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexReplicasTemplateT_faiss__Index_t,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQR *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQR,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFScalarQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlatDedup *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlatDedup,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVFFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexIVF *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexIVF,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexScalarQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexScalarQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexLSH *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexLSH,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexPreTransform *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexPreTransform,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::MultiIndexQuantizer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__MultiIndexQuantizer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSWSQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSWSQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::IndexHNSW2Level *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__IndexHNSW2Level,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index2Layer *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index2Layer,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFPQ *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFPQ,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexIVFFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexIVFFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
-    /*@SWIG:swigfaiss.swig,471,DOWNCAST_GPU@*/
+    /*@SWIG:swigfaiss.swig,457,DOWNCAST_GPU@*/
     if (dynamic_cast<faiss::gpu::GpuIndexFlat *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__gpu__GpuIndexFlat,SWIG_POINTER_OWN);
     } else
     /*@SWIG@*/
     
     // default for non-recognized classes
-    /*@SWIG:swigfaiss.swig,459,DOWNCAST@*/
+    /*@SWIG:swigfaiss.swig,445,DOWNCAST@*/
     if (dynamic_cast<faiss::Index *> (result)) {
       resultobj = SWIG_NewPointerObj(result,SWIGTYPE_p_faiss__Index,SWIG_POINTER_OWN);
     } else
