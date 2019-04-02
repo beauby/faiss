@@ -16,9 +16,8 @@ RUN CUDA_ROOT=/usr/local/cuda-9.0 \
                -gencode=arch=compute_52,code=compute_52 \
                -gencode=arch=compute_60,code=compute_60 \
                -gencode=arch=compute_61,code=compute_61 \
-               -gencode=arch=compute_70,code=compute_70 \
-               -gencode=arch=compute_72,code=compute_72" \
-    conda build faiss-gpu --variants '{ "cudatoolkit": "9.0" }' --no-anaconda-upload -c pytorch
+               -gencode=arch=compute_70,code=compute_70" \
+    conda build faiss-gpu --variants '{ "cudatoolkit": "9.0", "python": "3.6" }' --no-anaconda-upload -c pytorch
 RUN CUDA_ROOT=/usr/local/cuda-10.0 \
     CUDA_ARCH="-gencode=arch=compute_35,code=compute_35 \
                -gencode=arch=compute_52,code=compute_52 \
