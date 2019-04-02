@@ -1,4 +1,4 @@
-./configure --with-cuda=/usr/local/cuda
+./configure --with-cuda=$CUDA_ROOT
 make -j $CPU_COUNT
 cd python
 make
