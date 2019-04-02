@@ -33,6 +33,13 @@ build:
     - CUDA_ROOT
     - CUDA_ARCH
 
+test:
+  imports:
+    - faiss
+  source_files: conda/faiss-gpu/test_package.py
+  commands:
+    - python -m unittest discover conda/faiss-gpu/
+
 about:
   home: https://github.com/facebookresearch/faiss
   license: BSD 3-Clause
