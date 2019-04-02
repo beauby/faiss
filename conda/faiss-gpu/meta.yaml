@@ -31,7 +31,7 @@ build:
   number: {{ FAISS_BUILD_NUMBER }}
   script_env:
     - CUDA_ROOT
-    - CUDA_ARCHES
+    - CUDA_ARCH
 
 about:
   home: https://github.com/facebookresearch/faiss
