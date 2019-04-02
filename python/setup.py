@@ -8,7 +8,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 check_fpath = os.path.join("_swigfaiss.so")
 if not os.path.exists(check_fpath):
     print("Could not find {}".format(check_fpath))
-    print("Have you run `make` and `make py`?")
+    print("Have you run `make` and `make -C python`?")
 
 # make the faiss python package dir
 shutil.rmtree("faiss", ignore_errors=True)
@@ -27,11 +27,11 @@ are implemented on the GPU. It is developed by Facebook AI Research.
 """
 setup(
     name='faiss',
-    version='1.5.0',
+    version='1.5.1',
     description='A library for efficient similarity search and clustering of dense vectors',
     long_description=long_description,
     url='https://github.com/facebookresearch/faiss',
-    author='Matthijs Douze, Jeff Johnson, Herve Jegou',
+    author='Matthijs Douze, Jeff Johnson, Herve Jegou, Lucas Hosseini',
     author_email='matthijs@fb.com',
     license='BSD',
     keywords='search nearest neighbors',
