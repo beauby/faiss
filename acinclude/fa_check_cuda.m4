@@ -31,12 +31,12 @@ if test x$with_cuda != xno; then
   fi
 
   if test "x$with_cuda_arch" == xdefault; then
-    with_cuda_arch="-gencode=arch=compute_35,code=compute_35 \\ \
-                    -gencode=arch=compute_52,code=compute_52 \\ \
-                    -gencode=arch=compute_60,code=compute_60 \\ \
-                    -gencode=arch=compute_61,code=compute_61 \\ \
-                    -gencode=arch=compute_70,code=compute_70 \\ \
-                    -gencode=arch=compute_75,code=compute_75"
+    with_cuda_arch="-gencode=arch=compute_35,code=compute_35 \\
+-gencode=arch=compute_52,code=compute_52 \\
+-gencode=arch=compute_60,code=compute_60 \\
+-gencode=arch=compute_61,code=compute_61 \\
+-gencode=arch=compute_70,code=compute_70 \\
+-gencode=arch=compute_75,code=compute_75"
   fi
 
   fa_save_CPPFLAGS="$CPPFLAGS"
