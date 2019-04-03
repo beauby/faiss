@@ -4179,12 +4179,8 @@ if test "${with_swig+set}" = set; then :
 fi
 
 case $with_swig in
-  "") SWIG_BIN=swig ;;
-  *) SWIG_BIN="$with_swig"
-esac
-
-# Extract the first word of "$SWIG_BIN", so it can be a program name with args.
-set dummy $SWIG_BIN; ac_word=$2
+ "") # Extract the first word of "swig", so it can be a program name with args.
+set dummy swig; ac_word=$2
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
 $as_echo_n "checking for $ac_word... " >&6; }
 if ${ac_cv_prog_SWIG+:} false; then :
@@ -4200,7 +4196,7 @@ do
   test -z "$as_dir" && as_dir=.
     for ac_exec_ext in '' $ac_executable_extensions; do
   if as_fn_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
-    ac_cv_prog_SWIG="$SWIG_BIN"
+    ac_cv_prog_SWIG="swig"
     $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
     break 2
   fi
@@ -4219,6 +4215,9 @@ else
 $as_echo "no" >&6; }
 fi
 
+;;
+  *) SWIG="$with_swig"
+esac
 
 
 
