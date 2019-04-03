@@ -14,10 +14,12 @@ LIBS         = @BLAS_LIBS@ @LAPACK_LIBS@ @LIBS@ @NVCC_LIBS@
 PYTHONCFLAGS = @PYTHON_CFLAGS@ -I@NUMPY_INCLUDE@
 
 NVCC         = @NVCC@
-NVCCFLAGS    = -I @CUDA_ROOT@/targets/x86_64-linux/include/ \
+CUDA_ROOT    = @CUDA_PREFIX@
+CUDA_ARCH    = @CUDA_ARCH@
+NVCCFLAGS    = -I $(CUDA_ROOT)/targets/x86_64-linux/include/ \
 -Xcompiler -fPIC \
 -Xcudafe --diag_suppress=unrecognized_attribute \
-@CUDA_ARCH@ \
+$(CUDA_ARCH) \
 -lineinfo \
 -ccbin $(CXX) -DFAISS_USE_FLOAT16
 
