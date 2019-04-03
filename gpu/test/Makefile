@@ -7,10 +7,10 @@
 -include ../../makefile.inc
 
 %.o: %.cpp
-	$(CXX) $(CUDACFLAGS) -o $@ -c $^
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(CPUFLAGS) -o $@ -c $^
 
-demo_ivfpq_indexing_gpu: demo_ivfpq_indexing_gpu.o ../libgpufaiss.a ../../libfaiss.a
-	$(CXX) $(LDFLAGS) $(NVCCLDFLAGS) -o $@ $^ $(LIBS) $(NVCCLIBS)
+demo_ivfpq_indexing_gpu: demo_ivfpq_indexing_gpu.o ../../libfaiss.a
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(CPUFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS)
 
 clean:
 	rm -f *.o demo_ivfpq_indexing_gpu

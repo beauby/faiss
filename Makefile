@@ -27,6 +27,7 @@ ifneq ($(strip $(NVCC)),)
 	HEADERS     += $(GPU_HEADERS)
 endif
 
+
 ############################
 # Building
 
@@ -73,6 +74,13 @@ depend: $(SRC) $(GPU_SRC)
 	for i in $^; do \
 		$(CXXCPP) $(CPPFLAGS) -x c++ -MM $$i; \
 	done > depend
+
+
+#############################
+# Python
+
+py: libfaiss.a
+	$(MAKE) -C python
 
 
 #############################
