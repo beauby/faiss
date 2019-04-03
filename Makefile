@@ -91,6 +91,8 @@ test: libfaiss.a py
 	PYTHONPATH=./python/build/`ls python/build | grep lib` \
 	$(PYTHON) -m unittest discover tests/ -v
 
+gpu_test: libfaiss.a
+	$(MAKE) -C gpu/test run
 
 #############################
 # Demos
