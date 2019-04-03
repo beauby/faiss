@@ -15,6 +15,7 @@ GPU_HEADERS = $(wildcard gpu/*.h gpu/impl/*.h gpu/utils/*.h)
 GPU_CPPSRC  = $(wildcard gpu/*.cpp gpu/impl/*.cpp gpu/utils/*.cpp)
 GPU_CUSRC   = $(wildcard gpu/*.cu gpu/impl/*.cu gpu/utils/*.cu \
 gpu/utils/nvidia/*.cu gpu/utils/blockselect/*.cu gpu/utils/warpselect/*.cu)
+GPU_SRC     = $(GPU_CPPSRC) $(GPU_CUSRC)
 GPU_CPPOBJ  = $(GPU_CPPSRC:.cpp=.o)
 GPU_CUOBJ   = $(GPU_CUSRC:.cu=.o)
 GPU_OBJ     = $(GPU_CPPOBJ) $(GPU_CUOBJ)
