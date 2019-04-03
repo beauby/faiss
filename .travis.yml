@@ -79,6 +79,7 @@ before_install:
 
 install:
   - find /usr -name Python.h
+  - python -m sysconfig
   - python -c "import sysconfig; print(' '.join(['-I' + sysconfig.get_path(p) for p in ['include', 'platinclude']]))"
   - ./.travis/install.sh
   - aclocal
