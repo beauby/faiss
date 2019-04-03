@@ -14,9 +14,8 @@ AC_MSG_CHECKING([for Python C flags])
 fa_python_cflags=`$PYTHON -c "
 import sysconfig
 paths = [['-I' + sysconfig.get_path(p) for p in ['include', 'platinclude']]]
-print(' '.join(paths))
-"` $PYTHON_CFLAGS
+print(' '.join(paths))"`
 AC_MSG_RESULT($fa_python_cflags)
-AC_SUBST(PYTHON_CFLAGS, $fa_python_cflags)
+AC_SUBST(PYTHON_CFLAGS, "$PYTHON_CFLAGS $fa_python_cflags")
 
 ])dnl FA_PYTHON
