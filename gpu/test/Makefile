@@ -12,7 +12,7 @@ TESTS_BIN = $(GPU_TESTS_SRC:.cpp=)
 
 
 run: $(TESTS_BIN)
-	for t in $(TESTS_BIN); do $t; done
+	for t in $(TESTS_BIN); do $$t; done
 
 %.o: %.cpp gtest
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(CPUFLAGS) -o $@ -c $< -Igtest/include
