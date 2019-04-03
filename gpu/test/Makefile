@@ -8,16 +8,16 @@
 
 TESTS_SRC = TestGpuIndexFlat.cpp TestGpuIndexIVFPQ.cpp \
 TestGpuIndexBinaryFlat.cpp TestGpuIndexIVFFlat.cpp TestGpuMemoryException.cpp
-# TestGpuSelect.cu
+CUDA_TESTS_SRC = TestGpuSelect.cu
 
-TESTS_OBJ = $(TESTS_SRC:.cpp=.o)
 TESTS_BIN = $(TESTS_SRC:.cpp=)
+CUDA_TESTS_BIN = $(CUDA_TESTS_SRC:.cu=)
 
 
 # test_gpu_index.py test_pytorch_faiss.py
 
-run: $(TESTS_BIN)
-	for t in $(TESTS_BIN); do ./$$t; done
+run: $(TESTS_BIN) $(CUDA_TESTS_BIN)
+	for t in $(TESTS_BIN) $(CUDA_TESTS_BIN); do ./$$t; done
 
 %.o: %.cu gtest
 	$(NVCC) $(NVCCFLAGS) -g -O3 -c $< -o $@
