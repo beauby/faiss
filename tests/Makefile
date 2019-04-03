@@ -8,6 +8,13 @@
 
 TESTS_SRC = $(wildcard *.cpp)
 TESTS_OBJ = $(TESTS_SRC:.cpp=.o)
+GPU_TESTS_SRC = $(wildcard ../gpu/test/Test*.cpp)
+GPU_TESTS_SRC = $(GPU_TESTS_SRC:.cpp=.o)
+
+ifneq ($(strip $(NVCC)),)
+	TESTS_SRC += $(GPU_TESTS_SRC)
+	TESTS_OBJ += $(GPU_TESTS_OBJ)
+endif
 
 all: run
 

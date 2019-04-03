@@ -10,9 +10,9 @@
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(CPUFLAGS) -o $@ -c $^
 
 demo_ivfpq_indexing_gpu: demo_ivfpq_indexing_gpu.o ../../libfaiss.a
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(CPUFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS)
+	$(CXX) -o $@ $^ $(LDFLAGS) $(LIBS)
 
 clean:
-	rm -f *.o demo_ivfpq_indexing_gpu
+	rm -f demo_ivfpq_indexing_gpu
 
 .PHONY: clean
