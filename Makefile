@@ -94,6 +94,7 @@ test: libfaiss.a py
 gpu_test: libfaiss.a
 	$(MAKE) -C gpu/test run
 
+
 #############################
 # Demos
 
@@ -108,4 +109,4 @@ misc/test_blas: misc/test_blas.cpp
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS)
 
 
-.PHONY: all clean demos install installdirs py test uninstall
+.PHONY: all clean demos install installdirs py test gpu_test uninstall
