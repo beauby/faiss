@@ -20,7 +20,7 @@ run: $(TESTS_BIN) $(CUDA_TESTS_BIN)
 	for t in $(TESTS_BIN) $(CUDA_TESTS_BIN); do ./$$t; done
 
 %.o: %.cu gtest
-	$(NVCC) $(NVCCFLAGS) -g -O3 -c $< -o $@
+	$(NVCC) $(NVCCFLAGS) -g -O3 -o $@ -c $< -Igtest/include
 
 %.o: %.cpp gtest
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(CPUFLAGS) -o $@ -c $< -Igtest/include
