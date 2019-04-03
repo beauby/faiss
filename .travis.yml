@@ -18,7 +18,7 @@ matrix:
             - libpython-dev
 #            - swig
       env:
-        - CONFIGURE_OPTS="--with-swig=~/swig/bin/swig"
+        - CONFIGURE_OPTS="--with-swig=~/swig/bin/swig" CXXFLAGS="-I/usr/include/python2.7"
     - os: linux
       compiler: gcc
       addons:
@@ -31,7 +31,7 @@ matrix:
             - libpython-dev
 #            - swig
       env:
-        - CONFIGURE_OPTS="--with-swig=~/swig/bin/swig"
+        - CONFIGURE_OPTS="--with-swig=~/swig/bin/swig" CXXFLAGS="-I/usr/include/python2.7"
     - os: linux
       compiler: gcc
       addons:
@@ -44,7 +44,7 @@ matrix:
             - libpython-dev
 #            - swig
       env:
-        - CONFIGURE_OPTS="--with-swig=~/swig/bin/swig"
+        - CONFIGURE_OPTS="--with-swig=~/swig/bin/swig" CXXFLAGS="-I/usr/include/python2.7"
     - os: linux
       compiler: clang
       addons:
@@ -57,7 +57,7 @@ matrix:
             - libpython-dev
 #            - swig
       env:
-        - CONFIGURE_OPTS="--with-swig=~/swig/bin/swig"
+        - CONFIGURE_OPTS="--with-swig=~/swig/bin/swig" CXXFLAGS="-I/usr/include/python2.7"
       env:
         # NOTE: Hack, c.f. https://github.com/travis-ci/travis-ci/issues/8613
         - LD_LIBRARY_PATH="/usr/local/clang/lib"
