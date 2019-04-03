@@ -78,6 +78,8 @@ before_install:
   - eval "$MATRIX_EVAL"
 
 install:
+  - find /usr -name Python.h
+  - python -c "import sysconfig; print(' '.join(['-I' + sysconfig.get_path(p) for p in ['include', 'platinclude']]))"
   - ./.travis/install.sh
   - aclocal
   - autoconf
