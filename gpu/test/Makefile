@@ -7,8 +7,8 @@
 -include ../../makefile.inc
 
 TESTS_SRC = $(wildcard Test*.cpp)
-TESTS_OBJ = $(GPU_TESTS_SRC:.cpp=.o)
-TESTS_BIN = $(GPU_TESTS_SRC:.cpp=)
+TESTS_OBJ = $(TESTS_SRC:.cpp=.o)
+TESTS_BIN = $(TESTS_SRC:.cpp=)
 
 
 run: $(TESTS_BIN)
