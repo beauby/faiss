@@ -17,7 +17,7 @@ TESTS_BIN = $(TESTS_SRC:.cpp=)
 # test_gpu_index.py test_pytorch_faiss.py
 
 run: $(TESTS_BIN)
-	for t in $(TESTS_BIN); do $$t; done
+	for t in $(TESTS_BIN); do ./$$t; done
 
 %.o: %.cu gtest
 	$(NVCC) $(NVCCFLAGS) -g -O3 -c $< -o $@
