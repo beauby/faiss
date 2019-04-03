@@ -15,10 +15,10 @@ matrix:
             - liblapack-dev
             - python-numpy
             - python-dev
-            - libpython-dev
 #            - swig
       env:
-        - CONFIGURE_OPTS="--with-swig=~/swig/bin/swig" CXXFLAGS="-I/usr/include/python2.7"
+        - CONFIGURE_OPTS="--with-swig=~/swig/bin/swig"
+        - PYTHON_CFLAGS="-I/usr/include/python2.7"
     - os: linux
       compiler: gcc
       addons:
@@ -28,10 +28,10 @@ matrix:
             - liblapack-dev
             - python-numpy
             - python-dev
-            - libpython-dev
 #            - swig
       env:
-        - CONFIGURE_OPTS="--with-swig=~/swig/bin/swig" CXXFLAGS="-I/usr/include/python2.7"
+        - CONFIGURE_OPTS="--with-swig=~/swig/bin/swig"
+        - PYTHON_CFLAGS="-I/usr/include/python2.7"
     - os: linux
       compiler: gcc
       addons:
@@ -41,10 +41,10 @@ matrix:
             - liblapack-dev
             - python-numpy
             - python-dev
-            - libpython-dev
 #            - swig
       env:
-        - CONFIGURE_OPTS="--with-swig=~/swig/bin/swig" CXXFLAGS="-I/usr/include/python2.7"
+        - CONFIGURE_OPTS="--with-swig=~/swig/bin/swig"
+        - PYTHON_CFLAGS="-I/usr/include/python2.7"
     - os: linux
       compiler: clang
       addons:
@@ -54,11 +54,10 @@ matrix:
             - liblapack-dev
             - python-numpy
             - python-dev
-            - libpython-dev
 #            - swig
       env:
-        - CONFIGURE_OPTS="--with-swig=~/swig/bin/swig" CXXFLAGS="-I/usr/include/python2.7"
-      env:
+        - CONFIGURE_OPTS="--with-swig=~/swig/bin/swig"
+        - PYTHON_CFLAGS="-I/usr/include/python2.7"
         # NOTE: Hack, c.f. https://github.com/travis-ci/travis-ci/issues/8613
         - LD_LIBRARY_PATH="/usr/local/clang/lib"
     - os: osx
@@ -78,9 +77,6 @@ before_install:
   - eval "$MATRIX_EVAL"
 
 install:
-  - find /usr -name Python.h
-  - python -m sysconfig
-  - python -c "import sysconfig; print(' '.join(['-I' + sysconfig.get_path(p) for p in ['include', 'platinclude']]))"
   - ./.travis/install.sh
   - aclocal
   - autoconf
