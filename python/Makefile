@@ -24,7 +24,7 @@ swigfaiss.o: swigfaiss.cpp
 _swigfaiss.so: swigfaiss.o ../libfaiss.a
 	$(CXX) $(SHAREDFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS)
 
-build: _swigfaiss.so swigfaiss.py faiss.py
+build: _swigfaiss.so faiss.py
 	$(PYTHON) setup.py build
 
 install: build
