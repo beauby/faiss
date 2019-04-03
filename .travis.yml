@@ -16,6 +16,8 @@ matrix:
             - python-numpy
             - python-dev
 #            - swig
+      env:
+        - CONFIGURE_OPTS="--with-swig=~/swig/bin/swig"
     - os: linux
       compiler: gcc
       addons:
@@ -26,6 +28,8 @@ matrix:
             - python-numpy
             - python-dev
 #            - swig
+      env:
+        - CONFIGURE_OPTS="--with-swig=~/swig/bin/swig"
     - os: linux
       compiler: gcc
       addons:
@@ -36,6 +40,8 @@ matrix:
             - python-numpy
             - python-dev
 #            - swig
+      env:
+        - CONFIGURE_OPTS="--with-swig=~/swig/bin/swig"
     - os: linux
       compiler: clang
       addons:
@@ -46,6 +52,8 @@ matrix:
             - python-numpy
             - python-dev
 #            - swig
+      env:
+        - CONFIGURE_OPTS="--with-swig=~/swig/bin/swig"
       env:
         # NOTE: Hack, c.f. https://github.com/travis-ci/travis-ci/issues/8613
         - LD_LIBRARY_PATH="/usr/local/clang/lib"
@@ -69,7 +77,7 @@ install:
   - ./.travis/install.sh
   - aclocal
   - autoconf
-  - ./configure --without-cuda
+  - ./configure --without-cuda $CONFIGURE_OPTS
   - make
   - make -C python
 
