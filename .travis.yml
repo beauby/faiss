@@ -15,6 +15,7 @@ matrix:
             - liblapack-dev
             - python-numpy
             - python-dev
+            - libpython-dev
 #            - swig
       env:
         - CONFIGURE_OPTS="--with-swig=~/swig/bin/swig"
@@ -27,6 +28,7 @@ matrix:
             - liblapack-dev
             - python-numpy
             - python-dev
+            - libpython-dev
 #            - swig
       env:
         - CONFIGURE_OPTS="--with-swig=~/swig/bin/swig"
@@ -39,6 +41,7 @@ matrix:
             - liblapack-dev
             - python-numpy
             - python-dev
+            - libpython-dev
 #            - swig
       env:
         - CONFIGURE_OPTS="--with-swig=~/swig/bin/swig"
@@ -51,6 +54,7 @@ matrix:
             - liblapack-dev
             - python-numpy
             - python-dev
+            - libpython-dev
 #            - swig
       env:
         - CONFIGURE_OPTS="--with-swig=~/swig/bin/swig"
@@ -74,7 +78,6 @@ before_install:
   - eval "$MATRIX_EVAL"
 
 install:
-  - ls /usr/local/include/python2.7
   - ./.travis/install.sh
   - aclocal
   - autoconf
