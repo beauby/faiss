@@ -2,6 +2,10 @@ AC_DEFUN([FA_CHECK_CUDA], [
 
 AC_ARG_WITH(cuda,
   [AS_HELP_STRING([--with-cuda=<prefix>], [prefix of the CUDA installation])])
+AC_ARG_WITH(cuda-arch,
+  [AS_HELP_STRING([--with-cuda-arch=<gencodes>], [device specific -gencode flags])],
+  [],
+  [with_cuda_arch=default])
 
 if test x$with_cuda != xno; then
   if test x$with_cuda != x; then
@@ -24,6 +28,15 @@ if test x$with_cuda != xno; then
 
   if test "x$NVCC" == x; then
     AC_MSG_ERROR([Couldn't find nvcc])
+  fi
+
+  if test "x$with_cuda_arch" == xdefault; then
+    with_cuda_arch="-gencode=arch=compute_35,code=compute_35 \
+                    -gencode=arch=compute_52,code=compute_52 \
+                    -gencode=arch=compute_60,code=compute_60 \
+                    -gencode=arch=compute_61,code=compute_61 \
+                    -gencode=arch=compute_70,code=compute_70 \
+                    -gencode=arch=compute_75,code=compute_75"
   fi
 
   fa_save_CPPFLAGS="$CPPFLAGS"
@@ -50,4 +63,5 @@ AC_SUBST(NVCC_CPPFLAGS)
 AC_SUBST(NVCC_LDFLAGS)
 AC_SUBST(NVCC_LIBS)
 AC_SUBST(CUDA_PREFIX, $cuda_prefix)
+AC_SUBST(CUDA_ARCH, $with_cuda_arch)
 ])

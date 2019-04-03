@@ -645,6 +645,7 @@ build_cpu
 build
 OPENMP_CXXFLAGS
 LIBOBJS
+CUDA_ARCH
 CUDA_PREFIX
 NVCC_LIBS
 NVCC_LDFLAGS
@@ -690,7 +691,6 @@ infodir
 docdir
 oldincludedir
 includedir
-runstatedir
 localstatedir
 sharedstatedir
 sysconfdir
@@ -716,6 +716,7 @@ enable_option_checking
 with_python
 with_swig
 with_cuda
+with_cuda_arch
 enable_openmp
 with_blas
 with_lapack
@@ -771,7 +772,6 @@ datadir='${datarootdir}'
 sysconfdir='${prefix}/etc'
 sharedstatedir='${prefix}/com'
 localstatedir='${prefix}/var'
-runstatedir='${localstatedir}/run'
 includedir='${prefix}/include'
 oldincludedir='/usr/include'
 docdir='${datarootdir}/doc/${PACKAGE_TARNAME}'
@@ -1024,15 +1024,6 @@ do
   | -silent | --silent | --silen | --sile | --sil)
     silent=yes ;;
 
-  -runstatedir | --runstatedir | --runstatedi | --runstated \
-  | --runstate | --runstat | --runsta | --runst | --runs \
-  | --run | --ru | --r)
-    ac_prev=runstatedir ;;
-  -runstatedir=* | --runstatedir=* | --runstatedi=* | --runstated=* \
-  | --runstate=* | --runstat=* | --runsta=* | --runst=* | --runs=* \
-  | --run=* | --ru=* | --r=*)
-    runstatedir=$ac_optarg ;;
-
   -sbindir | --sbindir | --sbindi | --sbind | --sbin | --sbi | --sb)
     ac_prev=sbindir ;;
   -sbindir=* | --sbindir=* | --sbindi=* | --sbind=* | --sbin=* \
@@ -1170,7 +1161,7 @@ fi
 for ac_var in	exec_prefix prefix bindir sbindir libexecdir datarootdir \
 		datadir sysconfdir sharedstatedir localstatedir includedir \
 		oldincludedir docdir infodir htmldir dvidir pdfdir psdir \
-		libdir localedir mandir runstatedir
+		libdir localedir mandir
 do
   eval ac_val=\$$ac_var
   # Remove trailing slashes.
@@ -1323,7 +1314,6 @@ Fine tuning of the installation directories:
   --sysconfdir=DIR        read-only single-machine data [PREFIX/etc]
   --sharedstatedir=DIR    modifiable architecture-independent data [PREFIX/com]
   --localstatedir=DIR     modifiable single-machine data [PREFIX/var]
-  --runstatedir=DIR       modifiable per-process data [LOCALSTATEDIR/run]
   --libdir=DIR            object code libraries [EPREFIX/lib]
   --includedir=DIR        C header files [PREFIX/include]
   --oldincludedir=DIR     C header files for non-gcc [/usr/include]
@@ -1366,6 +1356,8 @@ Optional Packages:
   --with-python=<bin>     use Python binary <bin>
   --with-swig=<bin>       use SWIG binary <bin>
   --with-cuda=<prefix>    prefix of the CUDA installation
+  --with-cuda-arch=<gencodes>
+                          device specific -gencode flags
   --with-blas=<lib>       use BLAS library <lib>
   --with-lapack=<lib>     use LAPACK library <lib>
 
@@ -4633,6 +4625,14 @@ if test "${with_cuda+set}" = set; then :
 fi
 
 
+# Check whether --with-cuda-arch was given.
+if test "${with_cuda_arch+set}" = set; then :
+  withval=$with_cuda_arch;
+else
+  with_cuda_arch=default
+fi
+
+
 if test x$with_cuda != xno; then
   if test x$with_cuda != x; then
     cuda_prefix=$with_cuda
@@ -4731,6 +4731,15 @@ done
 
   if test "x$NVCC" == x; then
     as_fn_error $? "Couldn't find nvcc" "$LINENO" 5
+  fi
+
+  if test "x$with_cuda_arch" == xdefault; then
+    with_cuda_arch="-gencode=arch=compute_35,code=compute_35 \
+                    -gencode=arch=compute_52,code=compute_52 \
+                    -gencode=arch=compute_60,code=compute_60 \
+                    -gencode=arch=compute_61,code=compute_61 \
+                    -gencode=arch=compute_70,code=compute_70 \
+                    -gencode=arch=compute_75,code=compute_75"
   fi
 
   fa_save_CPPFLAGS="$CPPFLAGS"
@@ -4865,6 +4874,8 @@ fi
 
 
 CUDA_PREFIX=$cuda_prefix
+
+CUDA_ARCH=$with_cuda_arch
 
 
 
@@ -5395,8 +5406,6 @@ main ()
     if (*(data + i) != *(data3 + i))
       return 14;
   close (fd);
-  free (data);
-  free (data3);
   return 0;
 }
 _ACEOF
