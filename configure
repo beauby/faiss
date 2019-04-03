@@ -4134,9 +4134,9 @@ fa_python_bin=$PYTHON
 $as_echo_n "checking for Python C flags... " >&6; }
 fa_python_cflags=`$PYTHON -c "
 import sysconfig
-paths = ['-I' + sysconfig.get_path(p) for p in [['include', 'platinclude']]]
+paths = ['-I' + sysconfig.get_path(p) for p in ['include', 'platinclude']]
 print(' '.join(paths))
-"` "$PYTHON_CFLAGS"
+"` $PYTHON_CFLAGS
 { $as_echo "$as_me:${as_lineno-$LINENO}: result: $fa_python_cflags" >&5
 $as_echo "$fa_python_cflags" >&6; }
 PYTHON_CFLAGS=$fa_python_cflags
