@@ -6,18 +6,26 @@
 
 -include ../../makefile.inc
 
-TESTS_SRC = $(wildcard Test*.cpp)
+TESTS_SRC = TestGpuIndexFlat.cpp TestGpuIndexIVFPQ.cpp \
+TestGpuIndexBinaryFlat.cpp TestGpuIndexIVFFlat.cpp TestGpuMemoryException.cpp
+# TestGpuSelect.cu
+
 TESTS_OBJ = $(TESTS_SRC:.cpp=.o)
 TESTS_BIN = $(TESTS_SRC:.cpp=)
 
 
+# test_gpu_index.py test_pytorch_faiss.py
+
 run: $(TESTS_BIN)
 	for t in $(TESTS_BIN); do $$t; done
+
+%.o: %.cu gtest
+	$(NVCC) $(NVCCFLAGS) -g -O3 -c $< -o $@
 
 %.o: %.cpp gtest
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(CPUFLAGS) -o $@ -c $< -Igtest/include
 
-%: %.o ../../libfaiss.a gtest/make/gtest.a
+%: %.o TestUtils.o ../../libfaiss.a gtest/make/gtest.a
 	$(CXX) -o $@ $^ $(LDFLAGS) $(LIBS)
 
 demo_ivfpq_indexing_gpu: demo_ivfpq_indexing_gpu.o ../../libfaiss.a
