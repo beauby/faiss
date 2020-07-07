@@ -201,7 +201,7 @@ void IndexIDMap2Template<IndexT>::reconstruct
     try {
         this->index->reconstruct (rev_map.at (key), recons);
     } catch (const std::out_of_range& e) {
-        FAISS_THROW_FMT ("key %ld not found", key);
+        FAISS_THROW_FMT ("key %" PRId64 " not found", key);
     }
 }
 
