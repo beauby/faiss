@@ -9,6 +9,7 @@
 
 #include <faiss/MetaIndexes.h>
 
+#include <cinttypes>
 #include <cstdio>
 #include <stdint.h>
 
@@ -274,7 +275,7 @@ void IndexSplitVectors::search (
         float *distances1 = no == 0 ? distances : all_distances + no * k * n;
         idx_t *labels1 = no == 0 ? labels : all_labels + no * k * n;
         if (index->verbose)
-            printf ("begin query shard %d on %ld points\n", no, n);
+            printf ("begin query shard %d on %" PRId64 " points\n", no, n);
         const Index * sub_index = index->sub_indexes[no];
         int64_t sub_d = sub_index->d, d = index->d;
         idx_t ofs = 0;
