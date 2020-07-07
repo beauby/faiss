@@ -95,8 +95,11 @@ extern "C" {
 #include <faiss/IndexBinaryHNSW.h>
 #include <faiss/IndexBinaryHash.h>
 
+#ifndef SWIGWIN
 #include <faiss/impl/io.h>
 #include <faiss/index_io.h>
+#endif // !SWIGWIN
+
 #include <faiss/clone_index.h>
 
 #include <faiss/IVFlib.h>
@@ -106,7 +109,10 @@ extern "C" {
 #include <faiss/utils/random.h>
 #include <faiss/utils/Heap.h>
 #include <faiss/impl/AuxIndexStructures.h>
+
+#ifndef SWIGWIN
 #include <faiss/OnDiskInvertedLists.h>
+#endif // !SWIGWIN
 
 #include <faiss/Clustering.h>
 
@@ -359,7 +365,10 @@ void gpu_sync_all_devices()
 
 %warnfilter(401) faiss::OnDiskInvertedListsIOHook;
 %ignore OnDiskInvertedListsIOHook;
+
+#ifndef SWIGWIN
 %include  <faiss/OnDiskInvertedLists.h>
+#endif // !SWIGWIN
 
 %include  <faiss/impl/lattice_Zn.h>
 %include  <faiss/IndexLattice.h>
@@ -661,7 +670,9 @@ struct AsyncIndexSearchC {
 
 %typemap(out) faiss::InvertedLists * {
     DOWNCAST (ArrayInvertedLists)
+#ifndef SWIGWIN
     DOWNCAST (OnDiskInvertedLists)
+#endif // !SWIGWIN
     DOWNCAST (VStackInvertedLists)
     DOWNCAST (HStackInvertedLists)
     DOWNCAST (MaskedInvertedLists)
@@ -695,10 +706,12 @@ faiss::InvertedLists * downcast_InvertedLists (faiss::InvertedLists *il)
 }
 %}
 
+#ifndef SWIGWIN
 %include  <faiss/impl/io.h>
 %include  <faiss/index_io.h>
-%include  <faiss/clone_index.h>
+#endif // !SWIGWIN
 
+%include  <faiss/clone_index.h>
 %newobject index_factory;
 %newobject index_binary_factory;
 
