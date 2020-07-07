@@ -7,6 +7,7 @@
 
 #include <cinttypes>
 
+#include <faiss/IndexReplicas.h>
 #include <faiss/impl/FaissAssert.h>
 
 namespace faiss {
