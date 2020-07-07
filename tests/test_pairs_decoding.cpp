@@ -18,6 +18,9 @@
 #include <faiss/VectorTransform.h>
 #include <faiss/IVFlib.h>
 
+#ifdef _MSC_VER
+#define drand48 rand
+#endif // _MSC_VER
 
 namespace {
 

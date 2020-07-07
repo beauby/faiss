@@ -19,6 +19,11 @@
 #include <faiss/clone_index.h>
 #include <faiss/IVFlib.h>
 
+#ifdef _MSC_VER
+#define drand48 rand
+#define lrand48 rand
+#endif // _MSC_VER
+
 using namespace faiss;
 
 typedef Index::idx_t idx_t;

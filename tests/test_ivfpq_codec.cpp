@@ -15,6 +15,9 @@
 #include <faiss/utils/utils.h>
 #include <faiss/utils/distances.h>
 
+#ifdef _MSC_VER
+#define drand48 rand
+#endif // _MSC_VER
 
 namespace {
 

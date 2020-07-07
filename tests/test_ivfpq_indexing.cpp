@@ -15,6 +15,11 @@
 #include <faiss/IndexFlat.h>
 #include <faiss/index_io.h>
 
+#ifdef _MSC_VER
+#define srand48 srand
+#define drand48 rand
+#endif // _MSC_VER
+
 TEST(IVFPQ, accuracy) {
 
     // dimension of the vectors to index
