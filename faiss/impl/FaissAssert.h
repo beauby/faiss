@@ -15,6 +15,10 @@
 #include <cstdio>
 #include <string>
 
+#ifdef _MSC_VER
+#define __PRETTY_FUNCTION__ __FUNCSIG__
+#endif // _MSC_VER
+
 ///
 /// Assertions
 ///
