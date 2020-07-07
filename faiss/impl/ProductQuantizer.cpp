@@ -329,7 +329,7 @@ void ProductQuantizer::train (int n, const float * x)
 
 template<class PQEncoder>
 void compute_code(const ProductQuantizer& pq, const float *x, uint8_t *code) {
-  float distances [pq.ksub];
+  std::vector<float> distances(pq.ksub);
   PQEncoder encoder(code, pq.nbits);
   for (size_t m = 0; m < pq.M; m++) {
     float mindis = 1e20;
