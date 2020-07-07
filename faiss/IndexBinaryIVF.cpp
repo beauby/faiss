@@ -495,7 +495,7 @@ void search_knn_hamming_count(const IndexBinaryIVF& ivf,
       }
       FAISS_THROW_IF_NOT_FMT (
         key < (idx_t) ivf.nlist,
-        "Invalid key=%ld  at ik=%ld nlist=%ld\n",
+        "Invalid key=%" PRId64 " at ik=%zd nlist=%zd\n",
         key, ik, ivf.nlist);
 
       nlistv++;
