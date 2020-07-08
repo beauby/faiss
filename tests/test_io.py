@@ -29,7 +29,7 @@ class TestIOVariants(unittest.TestCase):
         x = np.random.uniform(size=(n, d)).astype('float32')
         index = faiss.IndexFlatL2(d)
         index.add(x)
-        _, fname = tempfile.mkstemp()
+        fd, fname = tempfile.mkstemp()
         try:
             faiss.write_index(index, fname)
 
@@ -51,6 +51,7 @@ class TestIOVariants(unittest.TestCase):
                 raise
 
         finally:
+            os.close(fd)
             if os.path.exists(fname):
                 os.unlink(fname)
 
@@ -95,7 +96,7 @@ class TestCallbacks(unittest.TestCase):
     def test_buf_read(self):
         x = np.random.uniform(size=20)
 
-        _, fname = tempfile.mkstemp()
+        fd, fname = tempfile.mkstemp()
         try:
             x.tofile(fname)
 
@@ -111,6 +112,7 @@ class TestCallbacks(unittest.TestCase):
 
             np.testing.assert_array_equal(x, y)
         finally:
+            os.close(fd)
             if os.path.exists(fname):
                 os.unlink(fname)
 
@@ -120,34 +122,40 @@ class TestCallbacks(unittest.TestCase):
         index = faiss.IndexFlatL2(d)
         index.add(x)
 
-        _, fname = tempfile.mkstemp()
+        fd, fname = tempfile.mkstemp()
         try:
+            # NOTE: This leaks fds, making the test fail on Windows.
             faiss.write_index(index, fname)
 
             f = open(fname, 'rb')
 
-            reader = faiss.PyCallbackIOReader(f.read, 1234)
+            try:
+                reader = faiss.PyCallbackIOReader(f.read, 1234)
 
-            if bsz > 0:
-                reader = faiss.BufferedIOReader(reader, bsz)
+                if bsz > 0:
+                    reader = faiss.BufferedIOReader(reader, bsz)
 
-            index2 = faiss.read_index(reader)
+                index2 = faiss.read_index(reader)
 
-            self.assertEqual(index.d, index2.d)
-            np.testing.assert_array_equal(
-                faiss.vector_to_array(index.xb),
-                faiss.vector_to_array(index2.xb)
-            )
+                self.assertEqual(index.d, index2.d)
+                np.testing.assert_array_equal(
+                    faiss.vector_to_array(index.xb),
+                    faiss.vector_to_array(index2.xb)
+                )
 
-            # This is not a callable function: should raise an exception
-            reader = faiss.PyCallbackIOReader("blabla")
-            self.assertRaises(
-                Exception,
-                faiss.read_index, reader
-            )
+                # This is not a callable function: should raise an exception
+                reader = faiss.PyCallbackIOReader("blabla")
+                self.assertRaises(
+                    Exception,
+                    faiss.read_index, reader
+                )
+            finally:
+                os.close(f)
+
         finally:
+            os.close(fd)
             if os.path.exists(fname):
-                os.unlink(fname)
+                 os.unlink(fname)
 
     def test_write_callback(self):
         self.do_write_callback(0)
@@ -169,7 +177,7 @@ class TestCallbacks(unittest.TestCase):
         index = faiss.IndexFlatL2(d)
         index.add(x)
 
-        _, fname = tempfile.mkstemp()
+        fd, fname = tempfile.mkstemp()
         try:
             faiss.write_index(index, fname)
 
@@ -185,6 +193,7 @@ class TestCallbacks(unittest.TestCase):
             )
 
         finally:
+            os.close(fd)
             if os.path.exists(fname):
                 os.unlink(fname)
 
