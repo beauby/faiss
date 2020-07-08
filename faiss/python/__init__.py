@@ -461,8 +461,9 @@ add_ref_in_constructor(IndexBinaryIDMap2, 0)
 add_ref_in_method(IndexReplicas, 'addIndex', 0)
 add_ref_in_method(IndexBinaryReplicas, 'addIndex', 0)
 
-add_ref_in_constructor(BufferedIOWriter, 0)
-add_ref_in_constructor(BufferedIOReader, 0)
+if hasattr(this_module, 'BufferedIOWriter'):
+    add_ref_in_constructor(BufferedIOWriter, 0)
+    add_ref_in_constructor(BufferedIOReader, 0)
 
 # seems really marginal...
 # remove_ref_from_method(IndexReplicas, 'removeIndex', 0)
