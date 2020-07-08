@@ -95,11 +95,8 @@ extern "C" {
 #include <faiss/IndexBinaryHNSW.h>
 #include <faiss/IndexBinaryHash.h>
 
-#ifndef SWIGWIN
 #include <faiss/impl/io.h>
 #include <faiss/index_io.h>
-#endif // !SWIGWIN
-
 #include <faiss/clone_index.h>
 
 #include <faiss/IVFlib.h>
@@ -706,11 +703,8 @@ faiss::InvertedLists * downcast_InvertedLists (faiss::InvertedLists *il)
 }
 %}
 
-#ifndef SWIGWIN
 %include  <faiss/impl/io.h>
 %include  <faiss/index_io.h>
-#endif // !SWIGWIN
-
 %include  <faiss/clone_index.h>
 %newobject index_factory;
 %newobject index_binary_factory;

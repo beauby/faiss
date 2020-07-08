@@ -12,10 +12,13 @@
 #include <cstdio>
 #include <cstdlib>
 
-#include <sys/mman.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+
+#ifndef _MSC_VER
+#include <sys/mman.h>
 #include <unistd.h>
+#endif // !_MSC_VER
 
 #include <faiss/impl/FaissAssert.h>
 #include <faiss/impl/io.h>
