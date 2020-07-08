@@ -11,7 +11,7 @@ import numpy as np
 import faiss
 import unittest
 
-from common import Randu10k
+from .common import Randu10k
 
 ru = Randu10k()
 
