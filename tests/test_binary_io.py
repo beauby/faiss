@@ -37,7 +37,7 @@ class TestBinaryFlat(unittest.TestCase):
         index.add(self.xb)
         D, I = index.search(self.xq, 3)
 
-        _, tmpnam = tempfile.mkstemp()
+        fd, tmpnam = tempfile.mkstemp()
         try:
             faiss.write_index_binary(index, tmpnam)
 
@@ -49,6 +49,7 @@ class TestBinaryFlat(unittest.TestCase):
             assert (D2 == D).all()
 
         finally:
+            os.close(fd)
             os.remove(tmpnam)
 
 
@@ -74,7 +75,7 @@ class TestBinaryIVF(unittest.TestCase):
         index.add(self.xb)
         D, I = index.search(self.xq, 3)
 
-        _, tmpnam = tempfile.mkstemp()
+        fd, tmpnam = tempfile.mkstemp()
 
         try:
             faiss.write_index_binary(index, tmpnam)
@@ -87,6 +88,7 @@ class TestBinaryIVF(unittest.TestCase):
             assert (D2 == D).all()
 
         finally:
+            os.close(fd)
             os.remove(tmpnam)
 
 
@@ -107,7 +109,7 @@ class TestObjectOwnership(unittest.TestCase):
         index = faiss.IndexBinaryFlat(d)
         index.add(self.xb)
 
-        _, tmpnam = tempfile.mkstemp()
+        fd, tmpnam = tempfile.mkstemp()
         try:
             faiss.write_index_binary(index, tmpnam)
 
@@ -115,6 +117,7 @@ class TestObjectOwnership(unittest.TestCase):
 
             assert index2.thisown
         finally:
+            os.close(fd)
             os.remove(tmpnam)
 
 
@@ -137,7 +140,7 @@ class TestBinaryFromFloat(unittest.TestCase):
         index.add(self.xb)
         D, I = index.search(self.xq, 3)
 
-        _, tmpnam = tempfile.mkstemp()
+        fd, tmpnam = tempfile.mkstemp()
 
         try:
             faiss.write_index_binary(index, tmpnam)
@@ -150,6 +153,7 @@ class TestBinaryFromFloat(unittest.TestCase):
             assert (D2 == D).all()
 
         finally:
+            os.close(fd)
             os.remove(tmpnam)
 
 
@@ -171,7 +175,7 @@ class TestBinaryHNSW(unittest.TestCase):
         index.add(self.xb)
         D, I = index.search(self.xq, 3)
 
-        _, tmpnam = tempfile.mkstemp()
+        fd, tmpnam = tempfile.mkstemp()
 
         try:
             faiss.write_index_binary(index, tmpnam)
@@ -184,6 +188,7 @@ class TestBinaryHNSW(unittest.TestCase):
             assert (D2 == D).all()
 
         finally:
+            os.close(fd)
             os.remove(tmpnam)
 
     def test_ivf_hnsw(self):
@@ -197,7 +202,7 @@ class TestBinaryHNSW(unittest.TestCase):
         index.add(self.xb)
         D, I = index.search(self.xq, 3)
 
-        _, tmpnam = tempfile.mkstemp()
+        fd, tmpnam = tempfile.mkstemp()
 
         try:
             faiss.write_index_binary(index, tmpnam)
@@ -210,6 +215,7 @@ class TestBinaryHNSW(unittest.TestCase):
             assert (D2 == D).all()
 
         finally:
+            os.close(fd)
             os.remove(tmpnam)
 
 
