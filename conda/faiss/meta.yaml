@@ -40,7 +40,7 @@ outputs:
         - cmake >=3.17  # [win]
         - cmake-local   # [not win]
       host:
-        - mkl >=2018
+        - mkl-devel >=2018
         - blas =*=mkl
         - cudatoolkit {{ cudatoolkit }}  # [cudatoolkit != "None"]
       run:
