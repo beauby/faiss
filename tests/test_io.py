@@ -150,7 +150,7 @@ class TestCallbacks(unittest.TestCase):
                     faiss.read_index, reader
                 )
             finally:
-                os.close(f)
+                f.close()
 
         finally:
             os.close(fd)
