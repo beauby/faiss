@@ -79,7 +79,8 @@ outputs:
       source_files:
         - tests/
 
-  - name: cmake
+  # NOTE: Available CMake version for linux/osx is currently too old.
+  - name: cmake  # [not win]
     version: 3.17
     script: install-cmake.sh
     requirements:
