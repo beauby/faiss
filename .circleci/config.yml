@@ -109,14 +109,14 @@ jobs:
   build_windows:
     executor:
       name: win/default
-      shell: powershell.exe
+      shell: bash.exe
     steps:
       - checkout
       - run:
           command: |
             conda install conda-build
             cd conda
-            conda build faiss
+            conda build faiss --python 3.8
 
 workflows:
   version: 2
