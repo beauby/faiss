@@ -13,7 +13,7 @@ import os
 import shutil
 import tempfile
 
-from .common import get_dataset_2
+from common import get_dataset_2
 
 class TestRemove(unittest.TestCase):
 

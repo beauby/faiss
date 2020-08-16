@@ -10,7 +10,7 @@ import numpy as np
 import unittest
 import faiss
 
-from .common import compare_binary_result_lists, make_binary_dataset
+from common import compare_binary_result_lists, make_binary_dataset
 
 
 

@@ -12,7 +12,7 @@ import numpy as np
 import faiss
 import unittest
 
-from .common import get_dataset_2
+from common import get_dataset_2
 
 import scipy.spatial.distance
 

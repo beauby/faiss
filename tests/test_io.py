@@ -16,7 +16,7 @@ import warnings
 import platform
 from multiprocessing.dummy import Pool as ThreadPool
 
-from .common import get_dataset, get_dataset_2
+from common import get_dataset, get_dataset_2
 
 if platform.python_version_tuple()[0] >= '3':
     warnings.simplefilter("ignore", category=ResourceWarning)
