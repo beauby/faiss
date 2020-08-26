@@ -42,6 +42,12 @@ swig_add_library(swigfaiss
   SOURCES swigfaiss.swig
 )
 
+if(FAISS_ENABLE_GPU)
+  set_source_files_properties(swigfaiss.swig PROPERTIES
+    COMPILE_DEFINITIONS GPU_WRAPPER
+    )
+endif()
+
 if(NOT WIN32)
   # NOTE: Python does not recognize the dylib extension.
   set_target_properties(swigfaiss PROPERTIES SUFFIX .so)
@@ -50,9 +56,6 @@ endif()
 if(FAISS_ENABLE_GPU)
   find_package(CUDAToolkit REQUIRED)
   target_link_libraries(swigfaiss PRIVATE CUDA::cudart)
-  set_source_files_properties(swigfaiss.swig PROPERTIES
-    COMPILE_DEFINITIONS GPU_WRAPPER
-  )
 endif()
 
 if(NOT TARGET faiss)
