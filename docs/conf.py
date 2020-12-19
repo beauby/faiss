@@ -19,8 +19,8 @@
 
 project = 'Faiss'
 # FIXME
-copyright = '2020, Matthijs Douze, Lucas Hosseini'
-author = 'Matthijs Douze, Lucas Hosseini'
+copyright = '2020, TODO'
+author = 'TODO'
 
 
 # -- General configuration ---------------------------------------------------
@@ -30,7 +30,6 @@ author = 'Matthijs Douze, Lucas Hosseini'
 # ones.
 extensions = [
     "breathe",
-    "recommonmark",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -47,7 +46,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+html_theme = 'sphinx_rtd_theme'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -59,20 +58,10 @@ html_static_path = ['_static']
 
 breathe_projects = { "faiss": "xml/" }
 breathe_default_project = "faiss"
-
+breathe_implementation_filename_extensions = [".cpp", ".cu"]
+breathe_default_members = ("members", "protected-members", "private-members", "undoc-members")
 
 # -- AutoStructify configuration ---------------------------------------------
 
-import recommonmark
-from recommonmark.transform import AutoStructify
-
-recommonmark_config = {
-    "auto_toc_tree_section": "Contents",
-    "enable_eval_rst": True,
-    "emable_eval_math": True,
-}
-
-
-def setup(app):
-    app.add_config_value("recommonmark_config", recommonmark_config, True)
-    app.add_transform(AutoStructify)
+#def setup(app):
+#    app.add_transform(AutoStructify)
