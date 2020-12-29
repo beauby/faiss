@@ -30,6 +30,7 @@ struct AutoTuneCriterion {
     idx_t nnn; ///< nb of NNs that the query should request
     idx_t gt_nnn; ///< nb of GT NNs required to evaluate crterion
 
+    int foobar; ///< Test 3
     std::vector<float> gt_D;  ///< Ground-truth distances (size nq * gt_nnn)
     std::vector<idx_t> gt_I;  ///< Ground-truth indexes (size nq * gt_nnn)
 
