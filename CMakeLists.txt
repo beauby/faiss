@@ -23,9 +23,11 @@ option(FAISS_ENABLE_GPU "Enable support for GPU indexes." ON)
 option(FAISS_ENABLE_PYTHON "Build Python extension." ON)
 option(FAISS_ENABLE_C_API "Build C API." OFF)
 
+# CTest must be included in the top level to enable `make test` target.
+include(CTest)
+
 if(FAISS_ENABLE_GPU)
   set(CMAKE_CUDA_HOST_COMPILER ${CMAKE_CXX_COMPILER})
-  enable_language(CUDA)
 endif()
 
 add_subdirectory(faiss)
@@ -45,12 +47,6 @@ endif()
 add_subdirectory(demos)
 add_subdirectory(tutorial/cpp)
 
-# CTest must be included in the top level to enable `make test` target.
-include(CTest)
 if(BUILD_TESTING)
   add_subdirectory(tests)
-
-  if(FAISS_ENABLE_GPU)
-    add_subdirectory(faiss/gpu/test)
-  endif()
 endif()

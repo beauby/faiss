@@ -227,10 +227,6 @@ namespace std {
 %template(OnDiskOneListVector) std::vector<faiss::OnDiskOneList>;
 #endif // !SWIGWIN
 
-#ifdef GPU_WRAPPER
-%template(GpuResourcesVector) std::vector<faiss::gpu::GpuResourcesProvider*>;
-#endif
-
 // produces an error on the Mac
 %ignore faiss::hamming;
 
@@ -257,78 +253,6 @@ void gpu_profiler_start();
 void gpu_profiler_stop();
 void gpu_sync_all_devices();
 
-#ifdef GPU_WRAPPER
-
-%shared_ptr(faiss::gpu::GpuResources);
-%shared_ptr(faiss::gpu::StandardGpuResourcesImpl);
-
-%{
-
-#include <faiss/gpu/StandardGpuResources.h>
-#include <faiss/gpu/GpuIndicesOptions.h>
-#include <faiss/gpu/GpuClonerOptions.h>
-#include <faiss/gpu/GpuIndex.h>
-#include <faiss/gpu/GpuIndexFlat.h>
-#include <faiss/gpu/GpuIndexIVF.h>
-#include <faiss/gpu/GpuIndexIVFPQ.h>
-#include <faiss/gpu/GpuIndexIVFFlat.h>
-#include <faiss/gpu/GpuIndexIVFScalarQuantizer.h>
-#include <faiss/gpu/GpuIndexBinaryFlat.h>
-#include <faiss/gpu/GpuAutoTune.h>
-#include <faiss/gpu/GpuCloner.h>
-#include <faiss/gpu/GpuDistance.h>
-
-int get_num_gpus()
-{
-    return faiss::gpu::getNumDevices();
-}
-
-void gpu_profiler_start()
-{
-    return faiss::gpu::profilerStart();
-}
-
-void gpu_profiler_stop()
-{
-    return faiss::gpu::profilerStop();
-}
-
-void gpu_sync_all_devices()
-{
-    return faiss::gpu::synchronizeAllDevices();
-}
-
-%}
-
-%template() std::pair<int, unsigned long>;
-%template() std::map<std::string, std::pair<int, unsigned long> >;
-%template() std::map<int, std::map<std::string, std::pair<int, unsigned long> > >;
-
-// causes weird wrapper bug
-%ignore *::allocMemoryHandle;
-%ignore faiss::gpu::GpuMemoryReservation;
-%ignore faiss::gpu::GpuMemoryReservation::operator=(GpuMemoryReservation&&);
-
-%include  <faiss/gpu/GpuResources.h>
-%include  <faiss/gpu/StandardGpuResources.h>
-
-typedef CUstream_st* cudaStream_t;
-
-%inline %{
-
-// interop between pytorch exposed cudaStream_t and faiss
-cudaStream_t cast_integer_to_cudastream_t(long long x) {
-  return (cudaStream_t) x;
-}
-
-long long cast_cudastream_t_to_integer(cudaStream_t x) {
-  return (long) x;
-}
-
-%}
-
-#else
-
 %{
 int get_num_gpus()
 {
@@ -347,9 +271,6 @@ void gpu_sync_all_devices()
 {
 }
 %}
-
-
-#endif
 
 // order matters because includes are not recursive
 
@@ -453,32 +374,6 @@ void gpu_sync_all_devices()
 %include  <faiss/impl/AuxIndexStructures.h>
 
 
-#ifdef GPU_WRAPPER
-
-// quiet SWIG warnings
-%ignore faiss::gpu::GpuIndexIVF::GpuIndexIVF;
-
-%include  <faiss/gpu/GpuIndicesOptions.h>
-%include  <faiss/gpu/GpuClonerOptions.h>
-%include  <faiss/gpu/GpuIndex.h>
-%include  <faiss/gpu/GpuIndexFlat.h>
-%include  <faiss/gpu/GpuIndexIVF.h>
-%include  <faiss/gpu/GpuIndexIVFPQ.h>
-%include  <faiss/gpu/GpuIndexIVFFlat.h>
-%include  <faiss/gpu/GpuIndexIVFScalarQuantizer.h>
-%include  <faiss/gpu/GpuIndexBinaryFlat.h>
-%include  <faiss/gpu/GpuDistance.h>
-
-
-#endif
-
-
-
-
-
-
-
-
 /*******************************************************************
  * downcast return of some functions so that the sub-class is used
  * instead of the generic upper-class.
@@ -496,12 +391,6 @@ void gpu_sync_all_devices()
 %define DOWNCAST2(subclass, longname)
     if (dynamic_cast<faiss::subclass *> ($1)) {
       $result = SWIG_NewPointerObj($1,SWIGTYPE_p_faiss__ ## longname,$owner);
-    } else
-%enddef
-
-%define DOWNCAST_GPU(subclass)
-    if (dynamic_cast<faiss::gpu::subclass *> ($1)) {
-      $result = SWIG_NewPointerObj($1,SWIGTYPE_p_faiss__gpu__ ## subclass,$owner);
     } else
 %enddef
 
@@ -543,12 +432,6 @@ void gpu_sync_all_devices()
     DOWNCAST ( IndexHNSWSQ )
     DOWNCAST ( IndexHNSW2Level )
     DOWNCAST ( Index2Layer )
-#ifdef GPU_WRAPPER
-    DOWNCAST_GPU ( GpuIndexIVFPQ )
-    DOWNCAST_GPU ( GpuIndexIVFFlat )
-    DOWNCAST_GPU ( GpuIndexIVFScalarQuantizer )
-    DOWNCAST_GPU ( GpuIndexFlat )
-#endif
     // default for non-recognized classes
     DOWNCAST ( Index )
     if ($1 == NULL)
@@ -644,20 +527,6 @@ faiss::InvertedLists * downcast_InvertedLists (faiss::InvertedLists *il)
 %include  <faiss/AutoTune.h>
 %include  <faiss/index_factory.h>
 %include  <faiss/MatrixStats.h>
-
-
-#ifdef GPU_WRAPPER
-
-%include  <faiss/gpu/GpuAutoTune.h>
-
-%newobject index_gpu_to_cpu;
-%newobject index_cpu_to_gpu;
-%newobject index_cpu_to_gpu_multiple;
-
-%include  <faiss/gpu/GpuCloner.h>
-
-#endif
-
 
 
 /*******************************************************************

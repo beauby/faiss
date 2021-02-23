@@ -20,15 +20,20 @@ namespace faiss {
 /// Base class for Faiss exceptions
 class FaissException : public std::exception {
  public:
-  explicit FaissException(const std::string& msg);
+  explicit FaissException(const std::string& msg) : msg(msg) {}
 
   FaissException(const std::string& msg,
                  const char* funcName,
                  const char* file,
-                 int line);
+                 int line)
+    : FaissException("Error in " + std::string(funcName) + " at " +
+                     std::string(file) + ":" + std::to_string(line) + ": " +
+                     msg) {}
 
   /// from std::exception
-  const char* what() const noexcept override;
+  const char* what() const noexcept override {
+    return msg.c_str();
+  }
 
   std::string msg;
 };

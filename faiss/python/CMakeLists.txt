@@ -24,6 +24,33 @@ set_source_files_properties(swigfaiss.swig PROPERTIES
   USE_TARGET_INCLUDE_DIRECTORIES TRUE
 )
 
+if(FAISS_ENABLE_GPU)
+  set_source_files_properties(swigfaiss_gpu.swig PROPERTIES
+    CPLUSPLUS ON
+    USE_TARGET_INCLUDE_DIRECTORIES TRUE
+  )
+  if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Darwin" AND NOT WIN32)
+    set_source_files_properties(swigfaiss_gpu.swig PROPERTIES
+      SWIG_FLAGS -DSWIGWORDSIZE64
+    )
+  endif()
+  find_package(CUDAToolkit REQUIRED)
+  swig_add_library(swigfaiss_gpu
+    TYPE SHARED
+    LANGUAGE python
+    SOURCES swigfaiss_gpu.swig
+    )
+  target_link_libraries(swigfaiss_gpu PRIVATE CUDA::cudart)
+  # Hack so that python_callbacks.h can be included as
+  # `#include <faiss/python/python_callbacks.h>`.
+  target_include_directories(swigfaiss_gpu PRIVATE ${faiss_SOURCE_DIR})
+  target_link_libraries(swigfaiss_gpu PRIVATE
+    faiss_gpu
+    Python::Module
+    Python::NumPy
+    )
+endif()
+
 if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Darwin" AND NOT WIN32)
   set_source_files_properties(swigfaiss.swig PROPERTIES
     SWIG_FLAGS -DSWIGWORDSIZE64
@@ -36,21 +63,15 @@ if(WIN32)
   )
 endif()
 
-if(FAISS_ENABLE_GPU)
-  set_source_files_properties(swigfaiss.swig PROPERTIES
-    COMPILE_DEFINITIONS GPU_WRAPPER
-  )
-endif()
-
 if(TARGET faiss)
   # Manually add headers as extra dependencies of swigfaiss.
-  set(SWIG_MODULE_swigfaiss_EXTRA_DEPS)
-  foreach(h ${FAISS_HEADERS})
-    list(APPEND SWIG_MODULE_swigfaiss_EXTRA_DEPS "${PROJECT_SOURCE_DIR}/../${h}")
-  endforeach()
-  foreach(h ${FAISS_GPU_HEADERS})
-    list(APPEND SWIG_MODULE_swigfaiss_EXTRA_DEPS "${PROJECT_SOURCE_DIR}/../gpu/${h}")
-  endforeach()
+  # set(SWIG_MODULE_swigfaiss_EXTRA_DEPS)
+  # foreach(h ${FAISS_HEADERS})
+  #   list(APPEND SWIG_MODULE_swigfaiss_EXTRA_DEPS "${faiss_SOURCE_DIR}/${h}")
+  # endforeach()
+  # foreach(h ${FAISS_GPU_HEADERS})
+  #   list(APPEND SWIG_MODULE_swigfaiss_EXTRA_DEPS "${faiss_gpu_SOURCE_DIR}/${h}")
+  # endforeach()
 else()
   find_package(faiss REQUIRED)
 endif()
@@ -66,11 +87,6 @@ if(NOT WIN32)
   set_target_properties(swigfaiss PROPERTIES SUFFIX .so)
 endif()
 
-if(FAISS_ENABLE_GPU)
-  find_package(CUDAToolkit REQUIRED)
-  target_link_libraries(swigfaiss PRIVATE CUDA::cudart)
-endif()
-
 find_package(OpenMP REQUIRED)
 
 target_link_libraries(swigfaiss PRIVATE
@@ -82,7 +98,7 @@ target_link_libraries(swigfaiss PRIVATE
 
 # Hack so that python_callbacks.h can be included as
 # `#include <faiss/python/python_callbacks.h>`.
-target_include_directories(swigfaiss PRIVATE ${PROJECT_SOURCE_DIR}/../../)
+target_include_directories(swigfaiss PRIVATE ${faiss_SOURCE_DIR})
 
 find_package(Python REQUIRED
   COMPONENTS Development NumPy

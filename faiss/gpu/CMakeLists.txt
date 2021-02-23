@@ -4,7 +4,9 @@
 # This source code is licensed under the BSD-style license found in the
 # LICENSE file in the root directory of this source tree.
 
-target_sources(faiss PRIVATE
+project(faiss_gpu LANGUAGES CXX CUDA)
+
+add_library(faiss_gpu
   GpuAutoTune.cpp
   GpuCloner.cpp
   GpuClonerOptions.cpp
@@ -181,19 +183,28 @@ set(FAISS_GPU_HEADERS
   utils/warpselect/WarpSelectImpl.cuh
 )
 
-# Export FAISS_HEADERS variable to parent scope.
-set(FAISS_GPU_HEADERS ${FAISS_GPU_HEADERS} PARENT_SCOPE)
+set_target_properties(faiss_gpu PROPERTIES
+  POSITION_INDEPENDENT_CODE ON
+  WINDOWS_EXPORT_ALL_SYMBOLS ON
+  )
+
+# Handle `#include <faiss/gpu/foo.h>`.
+target_include_directories(faiss_gpu PUBLIC
+  $<BUILD_INTERFACE:${faiss_SOURCE_DIR}>)
 
 foreach(header ${FAISS_GPU_HEADERS})
-  get_filename_component(dir ${header} DIRECTORY )
+  get_filename_component(dir ${header} DIRECTORY)
   install(FILES ${header}
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/faiss/gpu/${dir}
   )
 endforeach()
 
-find_package(CUDAToolkit REQUIRED)
-
 find_package(OpenMP REQUIRED)
-target_link_libraries(faiss PRIVATE OpenMP::OpenMP_CXX)
+target_link_libraries(faiss_gpu PRIVATE OpenMP::OpenMP_CXX)
 
-target_link_libraries(faiss PRIVATE CUDA::cudart CUDA::cublas)
+find_package(CUDAToolkit REQUIRED)
+target_link_libraries(faiss_gpu PRIVATE CUDA::cudart CUDA::cublas)
+
+if(BUILD_TESTING)
+  add_subdirectory(test)
+endif()
